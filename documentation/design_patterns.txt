@@ -1,0 +1,8 @@
+'''
+design_patterns.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "Identify the design patters you used in your design and explain how you applied them" -Project 3.pdf
+'''
+Design Pattern:
