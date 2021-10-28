@@ -45,8 +45,8 @@ class Block(pygame.sprite.Sprite):
 		self.height = 5
 
 
-
 class Snake(pygame.sprite.Sprite):
+<<<<<<< HEAD
     '''
     CLASS COMMENTS HERE
 
@@ -67,14 +67,27 @@ class Snake(pygame.sprite.Sprite):
     :type height: int
     '''
     def __init__(self, x, y):
+||||||| b8a4252
+	def __init__(self, x, y):
+=======
+	"""
+	Author: Michael Talaga, 
+	Snake object that has a collection of blocks and updates position based on
+	block in front. Renders block list to the screen.
+	"""
+	def __init__(self, x, y):
+>>>>>>> 7131a97b8ccbe326ffc3028744411dedd5ec963a
 		pygame.sprite.Sprite.__init__(self)
 		self.head = Block(200, 200)
-		self.testBlock = Block(200, 205)
-		self.testBlock2 = Block(200, 210)
-		self.blocks = pygame.sprite.Group()
+		self.testBlock = Block(200, 205) #test
+		self.testBlock2 = Block(200, 210) #test
+		self.testBlock3 = Block(200, 210) #test
+		self.tail = self.testBlock2
+		self.blocks = pygame.sprite.Group() #create group of blocks
 		self.blocks.add(self.head)
 		self.blocks.add(self.testBlock)
 		self.blocks.add(self.testBlock2)
+		self.blocks.add(self.testBlock3)
 		self.direction = "NULL" #setting direction snke will move in
 
 
@@ -90,13 +103,13 @@ class Snake(pygame.sprite.Sprite):
 		change = True
 		y_change = 0
 		x_change = 0
-		if pressed[pygame.K_UP]:
+		if pressed[pygame.K_UP] and self.direction != "DOWN":
 			self.direction = "UP"
-		elif pressed[pygame.K_DOWN]:
+		elif pressed[pygame.K_DOWN] and self.direction != "UP":
 			self.direction = "DOWN"
-		if pressed[pygame.K_LEFT]:
+		if pressed[pygame.K_LEFT] and self.direction != "RIGHT":
 			self.direction = "LEFT"
-		elif pressed[pygame.K_RIGHT]:
+		elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
 			self.direction = "RIGHT"
 
 		if self.direction == "UP":
@@ -135,6 +148,7 @@ class Snake(pygame.sprite.Sprite):
 		#return 0
 
 	def render(self, screen):
+<<<<<<< HEAD
         '''
         COMMENTS \n
         Autor: \n
@@ -145,6 +159,12 @@ class Snake(pygame.sprite.Sprite):
 		#for each in blocks
 		#snakeBlocks.draw(screen)
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
+||||||| b8a4252
+		#for each in blocks
+		#snakeBlocks.draw(screen)
+		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
+=======
+>>>>>>> 7131a97b8ccbe326ffc3028744411dedd5ec963a
 		for block in self.blocks:
 			pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
