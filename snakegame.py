@@ -26,26 +26,6 @@ pace = 30 #Speed of the game
 
 
 class SnakeGame:
- def print_board():
-     return 0
- def snake_moves():
-     return 0
- def add_tail():
-     return 0
-
-
-class Block(pygame.sprite.Sprite):
-	def __init__(self, x, y):
-		pygame.sprite.Sprite.__init__(self)
-		self.id = 1 #block number
-		self.x = x
-		self.y = y
-		self.speed = 5
-		self.width = 5
-		self.height = 5
-
-
-class Snake(pygame.sprite.Sprite):
     '''
     CLASS COMMENTS HERE
 
@@ -53,6 +33,25 @@ class Snake(pygame.sprite.Sprite):
 
         snake =  Snake(100, 200)
         snake.game()
+
+    :param x:
+    :type x: int
+    '''
+    def print_board():
+         return 0
+    def snake_moves():
+         return 0
+    def add_tail():
+         return 0
+
+
+class Block(pygame.sprite.Sprite):
+    '''
+    CLASS COMMENTS HERE
+
+    Example::
+
+        block =  Block(100, 200)
 
     :param x:
     :type x: int
@@ -64,6 +63,29 @@ class Snake(pygame.sprite.Sprite):
     :type width: int
     :param height: snake height
     :type height: int
+    '''
+    def __init__(self, x, y):
+        pygame.sprite.Sprite.__init__(self)
+        self.id = 1 #block number
+        self.x = x
+        self.y = y
+        self.speed = 5
+        self.width = 5
+        self.height = 5
+
+
+class Snake(pygame.sprite.Sprite):
+    '''
+    CLASS COMMENTS HERE
+
+    Example::
+
+        snake =  Snake(100, 200)
+        snake.game()
+
+    :param head:
+    :type head:
+    :param testBlock:
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
@@ -182,4 +204,4 @@ def game():
         pygame.quit()
         sys.exit()
 
-main()
+# main()

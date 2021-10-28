@@ -1,7 +1,0 @@
-SnakeGame Module
-=================
-
-.. automodule:: snakegame
-  :members:
-  :undoc-members:
-  :show-inheritance:
