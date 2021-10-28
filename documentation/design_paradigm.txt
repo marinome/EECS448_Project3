@@ -1,0 +1,10 @@
+'''
+design_paradigm.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "Identify the design paradigm you (i.e., the team) chose for your prototype and explain why you chose that paradigm" -Project 3.pdf
+'''
+Design Paradigm:
+		As we began our project, the 5 of us identified large needs and functions for our code, such as a board creator, an end-game function, and a length adder function. We used Top-Down Functional Decomposition to break down the larger idea of a Snake Game into possible classes and methods we could implement to organize our code.
+    However, we quickly encountered pygame, a software that assists Python with running graphics. With this addition, we knew we wanted to utilize pygame and all it has to offer, so we are now in the process of transitioning from Top-Down Functional Decomposition to Aspect-Oriented Design. We are filling patches around what processes pygame can provide us and I feel some of us are using our coding time to simply identify problems and code, instead of a more chronological approach.
