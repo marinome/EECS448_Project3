@@ -132,7 +132,7 @@ class Snake(pygame.sprite.Sprite):
             self.head.y += y_change
 		#return 0
 
-	def render(self, screen):
+    def render(self, screen):
         '''
         COMMENTS \n
         Autor: \n
@@ -143,8 +143,8 @@ class Snake(pygame.sprite.Sprite):
 		#for each in blocks
 		#snakeBlocks.draw(screen)
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
-		for block in self.blocks:
-			pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
+        for block in self.blocks:
+            pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
 
 def game():
@@ -155,24 +155,20 @@ def game():
     :param :
     :type :
     '''
-	exit = False
-	snake = Snake(200, 200) #Initializes snake with a starting position
+    exit = False
+    snake = Snake(200, 200) #Initializes snake with a starting position
 
-	while not exit:
-		for event in pygame.event.get():
-			if event.type==pygame.QUIT:
-				exit = True
-
-
-		screen.fill(green)
+    while not exit:
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                exit = True
 
 
-
-
-		snake.render(screen)
-		snake.update()
-		pygame.display.update()
-		clock.tick(pace)
+        screen.fill(green)
+        snake.render(screen)
+        snake.update()
+        pygame.display.update()
+        clock.tick(pace)
 
     def main(self):
         '''
