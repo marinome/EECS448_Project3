@@ -31,12 +31,14 @@ class SnakeGame:
 
     Example::
 
-        snake =  Snake(100, 200)
-        snake.game()
+        snakegame =  SnakeGame()
 
-    :param x:
-    :type x: int
+    :param some_param:
+    :type some_param: int
     '''
+    def __init__(self):
+        self.some_param = 0
+
     def print_board():
          return 0
     def snake_moves():
