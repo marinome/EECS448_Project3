@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snake Game Module &mdash; Snake Game 0.1 documentation</title>
+  <title>Snake Module &mdash; Snake Game 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Support" href="support.html" />
-    <link rel="prev" title="Block Module" href="Block.html" /> 
+    <link rel="next" title="Block Module" href="Block.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,9 +40,9 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snake.html">Snake Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Snake Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Block.html">Block Module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Snake Game Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snakegame.html">Snake Game Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="work_cited.html">Works Cited</a></li>
 </ul>
@@ -61,9 +61,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Snake Game Module</li>
+      <li>Snake Module</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/snakegame.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/snake.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -71,37 +71,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-snakegame">
-<span id="snake-game-module"></span><h1>Snake Game Module<a class="headerlink" href="#module-snakegame" title="Permalink to this headline">¶</a></h1>
+  <section id="module-snake">
+<span id="snake-module"></span><h1>Snake Module<a class="headerlink" href="#module-snake" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="snakegame.SnakeGame">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">SnakeGame</span></span><a class="headerlink" href="#snakegame.SnakeGame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dt class="sig sig-object py" id="snake.Snake">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">Snake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pygame.sprite.Sprite</span></code></p>
 <p>CLASS COMMENTS HERE</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakegame</span> <span class="o">=</span>  <span class="n">SnakeGame</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snake</span> <span class="o">=</span>  <span class="n">Snake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">snake</span><span class="o">.</span><span class="n">game</span><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>some_param</strong> (<em>int</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>head</strong> – </p></li>
+<li><p><strong>testBlock</strong> – </p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="snakegame.SnakeGame.add_tail">
-<span class="sig-name descname"><span class="pre">add_tail</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.SnakeGame.add_tail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="snake.Snake.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>COMMENTS</p>
+<p>Autor:</p>
+<p>:param :
+:type :</p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="snakegame.SnakeGame.print_board">
-<span class="sig-name descname"><span class="pre">print_board</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.SnakeGame.print_board" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="snake.Snake.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>COMMENTS</p>
+<p>Autor:</p>
+<p>:param :
+:type :</p>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="snakegame.SnakeGame.snake_moves">
-<span class="sig-name descname"><span class="pre">snake_moves</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.SnakeGame.snake_moves" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="snake.game">
+<span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snake.game" title="Permalink to this definition">¶</a></dt>
+<dd><p>COMMENTS</p>
+<p>Autor:</p>
+<p>:param :
+:type :</p>
 </dd></dl>
 
 </section>
@@ -110,8 +126,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Block.html" class="btn btn-neutral float-left" title="Block Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="support.html" class="btn btn-neutral float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Block.html" class="btn btn-neutral float-right" title="Block Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
