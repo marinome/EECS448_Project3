@@ -1,0 +1,8 @@
+'''
+UML_diagram.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "Use one or more of the UML modeling diagrams to design your prototype" -Project 3.pdf
+'''
+UML Diagram:
