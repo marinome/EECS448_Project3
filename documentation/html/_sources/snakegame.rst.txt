@@ -1,4 +1,4 @@
-SnakeGame Module
+Snake Game Module
 =================
 
 .. automodule:: snakegame
