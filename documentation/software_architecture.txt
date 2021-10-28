@@ -1,0 +1,10 @@
+'''
+software_architecture.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "Within the context of your chosen design paradigm, describe the software architecture of your prototype" -Project 3.pdf
+'''
+Software Architecture:
+
+#design paradigms are top-down and aspect-oriented -MEM
