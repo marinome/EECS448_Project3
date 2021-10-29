@@ -16,8 +16,7 @@ by: Morgan Marino, Michael Talaga, AMA
 
 class Snake(pygame.sprite.Sprite):
     '''
-    CLASS COMMENTS HERE
-
+    Creates a snake class which will more around on the board and be controllable by the user. It will avoid collisions with itself and the boundaries. 
     Example::
 
         snake =  Snake(100, 200)
@@ -29,6 +28,8 @@ class Snake(pygame.sprite.Sprite):
     :type testBlock: block
     :param blocks: A collection of blocks for each block of the snake
     :type blocks: sprite group from pygame's library which 
+    :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
+    :type direction: string
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
@@ -50,8 +51,14 @@ class Snake(pygame.sprite.Sprite):
         Update movement of snake object via keyboard pressing. \n
         Autor: Michael Talaga
 
-        :param :
-        :type :
+        :param pressed: The pygame method for receiving a signal from the keyboard
+        :type pressed: Pygame function
+        :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this. 
+        :type change: boolean
+        :param y_change: The amount the snake moves in the vertical direction per turn (can be positive or negative)
+        :type y_change: int
+        :param x_change: The amount the snake moves in the horizontal direction per turn (can be positive or negative)
+        :type x_change: int
         '''
         pressed = pygame.key.get_pressed()
         change = True
