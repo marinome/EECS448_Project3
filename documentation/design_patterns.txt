@@ -6,4 +6,10 @@ by: Morgan Marino
 description: "Identify the design patters you used in your design and explain how you applied them" -Project 3.pdf
 
 Design Pattern:
-  A design pattern we used in our project is strategy. The strategy pattern is a behavioral software design pattern that enables selecting an algorithm at runtime. We used strategy to define a family of algorithms, put each of them into a separate class, and to make their objects interchangeable. We also used an iterator design pattern. Iterator is a behavioral design pattern that allows sequential traversal through a complex data structure without exposing its internal details.
+  A design pattern we used in our project is strategy. The strategy pattern is a behavioral software design pattern that enables selecting an algorithm at runtime. A design pattern isn't a finished design that can be transformed directly into code. It is a description or template for how to solve a problem that can be used in many different situations.In our snake game, scores given by functions are aggregated by linear weighted sum, and the snake takes the action that leads to the highest score. To find a set of good weight values, we apply an evolutionary algorithm.  The objective of the game is to make the other player crash. We used strategy to define a family of algorithms, put each of them into a separate class, and to make their objects interchangeable. We also used an iterator design pattern. Iterator is a behavioral design pattern that allows sequential traversal through a complex data structure without exposing its internal details. In our snake game can use the board to store information. So rather than trying to keep track of where different snake segments are on the board. We store how many more iterations of the game loops the Snake should be visible in every cell. Strategies are more likely to help in getting to another level. Just by studying how the snake moves along the screen and observing where the food usually appears, although it randomly appears, still the placements of the food or treats are predictable enough so the player can anticipate where it will appear.
+
+
+
+
+
+
