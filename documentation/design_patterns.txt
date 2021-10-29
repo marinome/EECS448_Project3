@@ -4,5 +4,6 @@ design_patterns.txt
 created: Oct 2021
 by: Morgan Marino
 description: "Identify the design patters you used in your design and explain how you applied them" -Project 3.pdf
-A design pattern we used in our project is strategy. The strategy pattern is a behavioral software design pattern that enables selecting an algorithm at runtime. We used strategy to define a family of algorithms, put each of them into a separate class, and to make their objects interchangeable. We also used an iterator design pattern. Iterator is a behavioral design pattern that allows sequential traversal through a complex data structure without exposing its internal details.
+
 Design Pattern:
+  A design pattern we used in our project is strategy. The strategy pattern is a behavioral software design pattern that enables selecting an algorithm at runtime. We used strategy to define a family of algorithms, put each of them into a separate class, and to make their objects interchangeable. We also used an iterator design pattern. Iterator is a behavioral design pattern that allows sequential traversal through a complex data structure without exposing its internal details.
