@@ -16,7 +16,9 @@ by: Morgan Marino, Michael Talaga, AMA
 
 class Snake(pygame.sprite.Sprite):
     '''
-    Creates a snake class which will more around on the board and be controllable by the user. It will avoid collisions with itself and the boundaries. 
+    Creates a snake class which will move around on the board and be controled
+    by the user. It will avoid collisions with itself and the boundaries.
+
     Example::
 
         snake =  Snake(100, 200)
@@ -27,7 +29,7 @@ class Snake(pygame.sprite.Sprite):
     :param testBlock: a block that acts as the 2nd block of the snake
     :type testBlock: block
     :param blocks: A collection of blocks for each block of the snake
-    :type blocks: sprite group from pygame's library which 
+    :type blocks: sprite group from pygame's library which
     :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
     :type direction: string
     '''
@@ -53,7 +55,7 @@ class Snake(pygame.sprite.Sprite):
 
         :param pressed: The pygame method for receiving a signal from the keyboard
         :type pressed: Pygame function
-        :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this. 
+        :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this.
         :type change: boolean
         :param y_change: The amount the snake moves in the vertical direction per turn (can be positive or negative)
         :type y_change: int
@@ -106,7 +108,7 @@ class Snake(pygame.sprite.Sprite):
 
     def render(self, screen):
         '''
-        Draw objects from snakes block group onto the screen as rectangles.
+        Draw objects from snakes block group onto the screen as rectangles. \n
         Autor: Michael Talaga
 
         :param screen: The screen for the game
@@ -117,6 +119,3 @@ class Snake(pygame.sprite.Sprite):
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
-
-
-

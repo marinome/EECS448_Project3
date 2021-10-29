@@ -77,7 +77,8 @@
 <dt class="sig sig-object py" id="snake.Snake">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">Snake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pygame.sprite.Sprite</span></code></p>
-<p>CLASS COMMENTS HERE</p>
+<p>Creates a snake class which will move around on the board and be controled
+by the user. It will avoid collisions with itself and the boundaries.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snake</span> <span class="o">=</span>  <span class="n">Snake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">snake</span><span class="o">.</span><span class="n">game</span><span class="p">()</span>
@@ -86,38 +87,50 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>head</strong> – </p></li>
-<li><p><strong>testBlock</strong> – </p></li>
+<li><p><strong>head</strong> (<em>block</em>) – The head of the snake</p></li>
+<li><p><strong>testBlock</strong> (<em>block</em>) – a block that acts as the 2nd block of the snake</p></li>
+<li><p><strong>blocks</strong> (<em>sprite group from pygame's library which</em>) – A collection of blocks for each block of the snake</p></li>
+<li><p><strong>direction</strong> (<em>string</em>) – The direction the snake is currently moving - defaulted to still but can be up,down,left, or right</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.render">
 <span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.render" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMMENTS</p>
-<p>Autor:</p>
-<p>:param :
-:type :</p>
+<dd><p>Draw objects from snakes block group onto the screen as rectangles.</p>
+<p>Autor: Michael Talaga</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>screen</strong> – The screen for the game</p>
+</dd>
+</dl>
+<p>:type : pygame display</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMMENTS</p>
-<p>Autor:</p>
-<p>:param :
-:type :</p>
+<dd><p>Update movement of snake object via keyboard pressing.</p>
+<p>Autor: Michael Talaga</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressed</strong> (<em>Pygame function</em>) – The pygame method for receiving a signal from the keyboard</p></li>
+<li><p><strong>change</strong> (<em>boolean</em>) – Dictating if the snake will change its direction. Blocks will readjust location based on this.</p></li>
+<li><p><strong>y_change</strong> (<em>int</em>) – The amount the snake moves in the vertical direction per turn (can be positive or negative)</p></li>
+<li><p><strong>x_change</strong> (<em>int</em>) – The amount the snake moves in the horizontal direction per turn (can be positive or negative)</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="snake.game">
-<span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snake.game" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMMENTS</p>
-<p>Autor:</p>
-<p>:param :
-:type :</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="snake.white">
+<span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">white</span></span><em class="property"> <span class="pre">=</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></em><a class="headerlink" href="#snake.white" title="Permalink to this definition">¶</a></dt>
+<dd><p>snake.py
+by: Morgan Marino, Michael Talaga, AMA</p>
 </dd></dl>
 
 </section>

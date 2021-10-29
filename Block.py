@@ -21,15 +21,15 @@ class Block(pygame.sprite.Sprite):
 
         block =  Block(100, 200)
 
-    :param x:
+    :param x: x position
     :type x: int
-    :param y:
+    :param y: y postiion
     :type y: int
-    :param speed: snake speed
+    :param speed: block speed
     :type speed: int
-    :param width: snake width
+    :param width: block width
     :type width: int
-    :param height: snake height
+    :param height: block height
     :type height: int
     '''
     def __init__(self, x, y):
