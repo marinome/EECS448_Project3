@@ -11,10 +11,12 @@ The object of the game is to make your snake fill up the entire playing board. Y
 ### Dependencies
 
 * Python 3.10
+* pygame (visit pygame.org/wiki/GettingStarted to download)
 
 ### Code Documentation
 
 * README.html
+* Project 3 Short Responses: design_paradigm.txt, software_architecture.txt, UML_diagram.txt, design_patterns.txt
 
 ## Authors
 - Adam Abernathy
