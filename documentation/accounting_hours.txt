@@ -4,9 +4,9 @@ Adam:			                                                                        
 Divya:                                                                                   1      .5                  .5             1
 Mason:                                                                                   1      .5
 Michael:			                                                                           1      .5
-Morgan:                                                                                  1      1             .5     1             1
+Morgan:                                                                                  1      1             .5     1             2      1
 
 Total: 
 
 Estimate of person-hours: 30
-  The reason we picked 30 hours is because we are (hoping) this will be much simpler than our last project. Based upon our busy schedules, we attempted to pick something that would lend itself nicely to interact with Python and pygame, two applications many of us know well.
+  The reason we picked 30 hours is because we are hoping this will be much simpler than our last project. Based upon our busy schedules, we attempted to pick something that would lend itself nicely to our knowledge in Python. Our goal is to can create a simple, but clean project in about 30 hours that we can make more complex in Project 4 and avoid wasting time continuing to debug Project 3.
