@@ -49,3 +49,40 @@ class SnakeGame:
          return 0
     def add_tail():
          return 0
+
+def game():
+    '''
+    COMMENTS \n
+    Autor: Michael Talaga
+
+    :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with keys. 
+    :type : snake object that is composed of blocks
+    '''
+    exit = False
+    snake = Snake(200, 200) #Initializes snake with a starting position
+
+    while not exit:
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                exit = True
+
+
+        screen.fill(green)
+        snake.render(screen)
+        snake.update()
+        pygame.display.update()
+        clock.tick(pace)
+
+def main():
+    '''
+    Main file to run the game and exit the system when it is finished.
+    Autor: Michael Talaga
+
+    :param :
+    :type :N/A
+    '''
+    game()
+    pygame.quit()
+    sys.exit()
+
+main()

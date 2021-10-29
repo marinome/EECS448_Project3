@@ -3,9 +3,11 @@ import string
 import sys
 import random
 import time
-
+from Block import Block
 pygame.init()
 
+#define white for snake
+white = (255, 255, 255)
 '''
 snake.py
 by: Morgan Marino, Michael Talaga, AMA
@@ -21,9 +23,12 @@ class Snake(pygame.sprite.Sprite):
         snake =  Snake(100, 200)
         snake.game()
 
-    :param head:
-    :type head:
-    :param testBlock:
+    :param head: The head of the snake
+    :type head: block
+    :param testBlock: a block that acts as the 2nd block of the snake
+    :type testBlock: block
+    :param blocks: A collection of blocks for each block of the snake
+    :type blocks: sprite group from pygame's library which 
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
@@ -42,8 +47,8 @@ class Snake(pygame.sprite.Sprite):
 
     def update(self):
         '''
-        COMMENTS \n
-        Autor: \n
+        Update movement of snake object via keyboard pressing. \n
+        Autor: Michael Talaga
 
         :param :
         :type :
@@ -94,11 +99,11 @@ class Snake(pygame.sprite.Sprite):
 
     def render(self, screen):
         '''
-        COMMENTS \n
-        Autor: \n
+        Draw objects from snakes block group onto the screen as rectangles.
+        Autor: Michael Talaga
 
-        :param :
-        :type :
+        :param screen: The screen for the game
+        :type : pygame display
         '''
 		#for each in blocks
 		#snakeBlocks.draw(screen)
@@ -107,39 +112,4 @@ class Snake(pygame.sprite.Sprite):
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
 
-def game():
-    '''
-    COMMENTS \n
-    Autor: \n
 
-    :param :
-    :type :
-    '''
-    exit = False
-    snake = Snake(200, 200) #Initializes snake with a starting position
-
-    while not exit:
-        for event in pygame.event.get():
-            if event.type==pygame.QUIT:
-                exit = True
-
-
-        screen.fill(green)
-        snake.render(screen)
-        snake.update()
-        pygame.display.update()
-        clock.tick(pace)
-
-    def main(self):
-        '''
-        COMMENTS \n
-        Autor: \n
-
-        :param :
-        :type :
-        '''
-        game()
-        pygame.quit()
-        sys.exit()
-
-# main()
