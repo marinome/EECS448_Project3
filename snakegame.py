@@ -143,7 +143,7 @@ def game():
                 exit = True
         screen.fill(get_color("green"))
         snake.render(screen)
-        snake.update()
+        snake.update((display_width, display_height))
         # display score
         show_score(score, get_color("blue"), 'times new roman', 20)
         pygame.display.update()
