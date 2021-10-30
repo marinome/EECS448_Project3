@@ -26,6 +26,8 @@ class Snake(pygame.sprite.Sprite):
         snake =  Snake(100, 200)
         snake._(_)
 
+    :param size: Size of snake
+    :type size: int
     :param head: The head of the snake
     :type head: Block
     :param testBlock: a block that acts as the 2nd block of the snake
@@ -39,6 +41,7 @@ class Snake(pygame.sprite.Sprite):
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
+        self.size = 1
         self.head = Block(200, 200)
         self.testBlock = Block(200, 205) #test
         self.testBlock2 = Block(200, 210) #test
@@ -172,7 +175,7 @@ class Snake(pygame.sprite.Sprite):
     def add_tail(self, to_add):
         '''
         when called it will add to tail and add block to block group \n
-        Authors: AMA, ...
+        Authors: AMA, Michael Talaga
 
         :param to_add: integer to increment the size of the snake body
         :type to_add: int
@@ -183,6 +186,7 @@ class Snake(pygame.sprite.Sprite):
         for i in range (0, to_add):
             newBlock = Block(self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
+            self.size += to_add
 
         #self.blocks.add(Block(coords[0], coords[1]))
 
