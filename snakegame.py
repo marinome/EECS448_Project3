@@ -133,9 +133,9 @@ def game():
     :type snake: Snake, made of, Block
     '''
     exit = False
-    snake = Snake(200, 200) #Initializes snake with a starting position
+    snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
     #random food placement
-    food = Food(random.randrange(1, display_width-10), random.randrange(1, display_height-10))
+    food = Food(random.choice(range(1, display_width-10, 5)), random.choice(range(1, display_height-10, 5)))
 
     while not exit:
         for event in pygame.event.get():
@@ -143,11 +143,12 @@ def game():
                 exit = True
         screen.fill(get_color("green"))
         snake.render(screen)
-        borderCollide = snake.update((display_width, display_height))
+        food.render(screen, get_color("red"))
+        borderCollide = snake.update((display_width, display_height), food)
         if (borderCollide == True): #Border collision check
             exit = True
-        # display score
-        show_score(score, get_color("blue"), 'times new roman', 20)
+        # display score #MT Made snake size for now
+        show_score(snake.size, get_color("blue"), 'times new roman', 20)
         pygame.display.update()
         clock.tick(pace)
 
