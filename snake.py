@@ -52,13 +52,15 @@ class Snake(pygame.sprite.Sprite):
         self.direction = "NULL" #setting direction snke will move in
 
 
-    def update(self, screenDimensions):
+    def update(self, screenDimensions, food):
         '''
         Update movement of snake object via keyboard pressing. \n
         Autor: Michael Talaga
 
         :param screenDimensions: screen dimensions (width,height)
         :type screenDimensions: tuple
+        :param food: Food object to check for collision
+        :type food: food sprite
         :param pressed: The pygame method for receiving a signal from the keyboard
         :type pressed: Pygame function
         :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this.
@@ -130,7 +132,10 @@ class Snake(pygame.sprite.Sprite):
             if (self.wall_check(screenDimensions)):
                 return True
 		#return 0
-        self.did_eat_block((100,100))
+        if (self.did_eat_block((food.x,food.y)) == True):
+            food.changePosition(screenDimensions)
+            self.add_tail(1)
+
 
     def render(self, screen):
         '''
@@ -179,7 +184,7 @@ class Snake(pygame.sprite.Sprite):
             newBlock = Block(self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
 
-        self.blocks.add(Block(coords[0], coords[1]))
+        #self.blocks.add(Block(coords[0], coords[1]))
 
 
     def did_eat_block(self, coords_2_eat):
@@ -198,6 +203,8 @@ class Snake(pygame.sprite.Sprite):
         # if copy_body[0].x == coords_2_eat[0] and copy_body[0].y == coords_2_eat[1]:
         #     # self.blocks.add()
         #     self.add_tail(coords_2_eat)
+        if self.head.x in range (coords_2_eat[0], coords_2_eat[0] + 6)  and self.head.y in range (coords_2_eat[1], coords_2_eat[1] + 6):
+            return True
 
 
 
