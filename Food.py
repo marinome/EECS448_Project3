@@ -35,8 +35,8 @@ class Food(pygame.sprite.Sprite):
         self.id = 1000 #block number
         self.x = x
         self.y = y
-        self.width = 5
-        self.height = 5
+        self.width = 10
+        self.height = 10
     
     def changePosition(self, screenDimensions):
         '''
