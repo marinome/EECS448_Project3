@@ -122,6 +122,8 @@ class Snake(pygame.sprite.Sprite):
 			#Make change to head
             self.head.x += x_change
             self.head.y += y_change
+            #if self.head.y < 50: #tail add test
+                #self.add_tail(1)
             #check for collision
             if (self.wall_check(screenDimensions)):
                 return 0
@@ -158,15 +160,21 @@ class Snake(pygame.sprite.Sprite):
 
     def add_tail(self, to_add):
         '''
-        when called it will add to tail \n
+        when called it will add to tail and add block to block group \n
         Authors: AMA, ...
 
-        :param to_add:
-        :type to_add:
+        :param to_add: integer to increment the size of the snake body
+        :type to_add: int
         '''
         #get current self.tail position
         #increment self.tail by to_add
+<<<<<<< HEAD
+        for i in range (0, to_add):
+            newBlock = Block(self.tail.x, self.tail.y)
+            self.blocks.add(newBlock)
+=======
         self.blocks.add(Block(coords[0], coords[1]))
+>>>>>>> 5a6dc13c9670ecbea7def373d7542e212c945dcc
 
     def did_eat_block(self, coords_2_eat):
         '''
