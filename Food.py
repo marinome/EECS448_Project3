@@ -32,7 +32,7 @@ class Food(pygame.sprite.Sprite):
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.id = 1 #block number
+        self.id = 1000 #block number
         self.x = x
         self.y = y
         self.width = 5
