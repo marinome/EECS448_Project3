@@ -11,17 +11,20 @@ References:
 -----------
   `Python`_
 
+  `Sphinx`_
+
   `pygame`_
 
-  `Snake Game`_
+  `pygame Snake Game`_
+
+  `Python Snake Game`_
 
   `Mouse Input`_
 
-  `Sphinx`_
-
 
 .. _Mouse Input: https://www.edureka.co/blog/snake-game-with-pygame/
-.. _Snake Game: https://www.kosbie.net/cmu/fall-10/15-110/handouts/snake/snake.html
+.. _Python Snake Game: https://www.kosbie.net/cmu/fall-10/15-110/handouts/snake/snake.html
 .. _Sphinx: https://www.sphinx-doc.org/en/master/index.html
 .. _Python: https://www.python.org/doc/
 .. _pygame: https://www.pygame.org/docs/
+.. _pygame Snake Game: https://www.geeksforgeeks.org/snake-game-in-python-using-pygame-module/

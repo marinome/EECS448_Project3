@@ -4,7 +4,7 @@ import sys
 import random
 import time
 from Block import Block
-from Food import Food 
+from Food import Food
 
 pygame.init()
 
@@ -24,7 +24,7 @@ class Snake(pygame.sprite.Sprite):
     Example::
 
         snake =  Snake(100, 200)
-        snake._s(_)
+        snake._(_)
 
     :param head: The head of the snake
     :type head: Block
@@ -35,7 +35,7 @@ class Snake(pygame.sprite.Sprite):
     :param blocks: A collection of blocks for each block of the snake
     :type blocks: sprite group from pygame's library which
     :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
-    :type direction: str
+    :type direction: String
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)

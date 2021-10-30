@@ -16,7 +16,7 @@ Main file
 by: Morgan Marino, Michael Talaga
 '''
 
-# MADE COLOR FUNC TO STORE ALL COLORS -AMA 
+# MADE COLOR FUNC TO STORE ALL COLORS -AMA
 #TODO: define colors, fonts
 # green = (0, 255, 0)
 # white = (255, 255, 255)
@@ -62,7 +62,7 @@ def get_color(color_string):
     :param color_string: name of color
     :type color_string: str
     :return _: The RGB value of the passed color
-    :rtype: tuple (R, G, B)
+    :rtype: tuple (red, green, blue)
     '''
     match color_string:
         case "red":
@@ -77,17 +77,60 @@ def get_color(color_string):
         case _:
             return (0,0,0)
 
-# displaying Score function
-def show_score(choice, color, font, size):
+
+def show_score(score_2_display, color, font, size):
+    '''
+    displays score on screen
+
+    :param score_2_display: score that will be displayed
+    :type score_2_display: int
+    :param color: color of the score font
+    :type color: RGB color
+    :param font: font style
+    :type font: pygame font name
+    :param size: font size
+    :type size: int
+    '''
     # creating font object score_font
     score_font = pygame.font.SysFont(font, size)
     # create the display surface object
-    score_surface = score_font.render('Score : ' + str(score), True, color)
-    # create a rectangular object for the
-    # text surface object
+    score_surface = score_font.render('Score : ' + str(score_2_display), True, color)
+    # create a rectangular object for the text surface object
     score_rect = score_surface.get_rect()
     # displaying text
     screen.blit(score_surface, score_rect)
+
+def game_over(font_type, font_size, font_color):
+    '''
+    display final score over board
+
+    :param font_type: font style
+    :type font_type: pygame font type
+    :param font_size: font size
+    :type font_size: int
+    :param font_color: font color
+    :type font_color: RGB color
+    '''
+    end_font = pygame.font.SysFont(font_type, font_size)
+    # creating a text surface on which text will be drawn
+    game_over_surface = end_font.render('Your Score is : ' + str(score), True, get_color(font_color))
+    # create a rectangular object for the text surface object
+    game_over_rect = game_over_surface.get_rect()
+    # setting position of the text
+    game_over_rect.midtop = (display_width/2, display_height/4)
+    # blit wil draw the text on screen
+    screen.blit(game_over_surface, game_over_rect)
+    pygame.display.flip()
+
+    # after 2 seconds we will quit the
+    # program
+    time.sleep(2)
+
+    # deactivating pygame library
+    pygame.quit()
+
+    # quit the program
+    quit()
 
 def game():
     '''
@@ -104,11 +147,8 @@ def game():
 
     while not exit:
         for event in pygame.event.get():
-
             if event.type==pygame.QUIT:
                 exit = True
-
-
         screen.fill(get_color("green"))
         snake.render(screen)
         snake.update()
@@ -124,6 +164,7 @@ def main():
 
     '''
     game()
+    game_over('times new roman', 50, "red")
     pygame.quit()
     sys.exit()
 

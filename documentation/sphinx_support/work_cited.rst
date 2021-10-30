@@ -11,6 +11,8 @@ References:
 -----------
   `Python`_
 
+  `Sphinx`_
+
   `pygame`_
 
   `pygame Snake Game`_
@@ -18,8 +20,6 @@ References:
   `Python Snake Game`_
 
   `Mouse Input`_
-
-  `Sphinx`_
 
 
 .. _Mouse Input: https://www.edureka.co/blog/snake-game-with-pygame/
