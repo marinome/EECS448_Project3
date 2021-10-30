@@ -168,13 +168,13 @@ class Snake(pygame.sprite.Sprite):
         '''
         #get current self.tail position
         #increment self.tail by to_add
-<<<<<<< HEAD
+
         for i in range (0, to_add):
             newBlock = Block(self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
-=======
+            
         self.blocks.add(Block(coords[0], coords[1]))
->>>>>>> 5a6dc13c9670ecbea7def373d7542e212c945dcc
+
 
     def did_eat_block(self, coords_2_eat):
         '''
