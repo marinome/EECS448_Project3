@@ -121,16 +121,8 @@ def game_over(font_type, font_size, font_color):
     # blit wil draw the text on screen
     screen.blit(game_over_surface, game_over_rect)
     pygame.display.flip()
-
-    # after 2 seconds we will quit the
-    # program
-    time.sleep(2)
-
-    # deactivating pygame library
-    pygame.quit()
-
-    # quit the program
-    quit()
+    # after 2 seconds we will quit the program
+    time.sleep(3)
 
 def game():
     '''
