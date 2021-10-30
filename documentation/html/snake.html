@@ -88,8 +88,8 @@ by the user. It will avoid collisions with itself and the boundaries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size of snake</p></li>
 <li><p><strong>head</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – The head of the snake</p></li>
-<li><p><strong>testBlock</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – a block that acts as the 2nd block of the snake</p></li>
 <li><p><strong>tail</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – tail of the snake</p></li>
 <li><p><strong>blocks</strong> (<em>sprite group from pygame's library which</em>) – A collection of blocks for each block of the snake</p></li>
 <li><p><strong>direction</strong> (<em>String</em>) – The direction the snake is currently moving - defaulted to still but can be up,down,left, or right</p></li>
@@ -99,22 +99,26 @@ by the user. It will avoid collisions with itself and the boundaries.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.add_tail">
 <span class="sig-name descname"><span class="pre">add_tail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_add</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.add_tail" title="Permalink to this definition">¶</a></dt>
-<dd><p>when called it will add to tail</p>
-<p>Authors: AMA, …</p>
+<dd><p>when called it will add to tail and add block to block group</p>
+<p>Authors: AMA, Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>to_add</strong> – </p>
+<dd class="field-odd"><p><strong>to_add</strong> (<em>int</em>) – integer to increment the size of the snake body</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.did_eat_block">
-<span class="sig-name descname"><span class="pre">did_eat_block</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.did_eat_block" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">did_eat_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords_2_eat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sideLength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.did_eat_block" title="Permalink to this definition">¶</a></dt>
 <dd><p>checks if snake has encountered a block</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>_</strong> – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords_2_eat</strong> (<em>x</em><em>,</em><em>y</em>) – x y of the current, Food</p></li>
+<li><p><strong>sideLength</strong> (<em>int</em>) – length of comparison object</p></li>
+<li><p><strong>mid</strong> (<em>int</em>) – middle of side length</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -133,12 +137,14 @@ by the user. It will avoid collisions with itself and the boundaries.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.update" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screenDimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update movement of snake object via keyboard pressing.</p>
 <p>Autor: Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>screenDimensions</strong> (<em>tuple</em>) – screen dimensions (width,height)</p></li>
+<li><p><strong>food</strong> (<em>food sprite</em>) – Food object to check for collision</p></li>
 <li><p><strong>pressed</strong> (<em>Pygame function</em>) – The pygame method for receiving a signal from the keyboard</p></li>
 <li><p><strong>change</strong> (<em>boolean</em>) – Dictating if the snake will change its direction. Blocks will readjust location based on this.</p></li>
 <li><p><strong>y_change</strong> (<em>int</em>) – The amount the snake moves in the vertical direction per turn (can be positive or negative)</p></li>
@@ -148,11 +154,23 @@ by the user. It will avoid collisions with itself and the boundaries.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="snake.Snake.wall_check">
+<span class="sig-name descname"><span class="pre">wall_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.wall_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks if snake has hit wall</p>
+<p>Authors: Michael Talaga, …</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>max_size</strong> (<em>Tuple of</em><em> (</em><em>x</em><em>, </em><em>y</em><em>)</em>) – max x &amp; y size of game board</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py data">
-<dt class="sig sig-object py" id="snake.white">
-<span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">white</span></span><em class="property"> <span class="pre">=</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></em><a class="headerlink" href="#snake.white" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="snake.blue">
+<span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">blue</span></span><em class="property"> <span class="pre">=</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></em><a class="headerlink" href="#snake.blue" title="Permalink to this definition">¶</a></dt>
 <dd><p>snake.py
 by: Morgan Marino, Michael Talaga, AMA</p>
 </dd></dl>

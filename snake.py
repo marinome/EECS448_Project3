@@ -147,13 +147,14 @@ class Snake(pygame.sprite.Sprite):
         for block in self.blocks:
             if block == self.head:
                 pygame.draw.rect(screen, blue, (block.x, block.y, block.width, block.height))
-            else:   
+            else:
                 pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
     def wall_check(self, max_size):
         '''
-        checks if snake has hit wall
+        checks if snake has hit wall \n
         Authors: Michael Talaga, ...
+
         :param max_size: max x & y size of game board
         :type max_size: Tuple of (x, y)
         '''
@@ -208,7 +209,7 @@ class Snake(pygame.sprite.Sprite):
         # if copy_body[0].x == coords_2_eat[0] and copy_body[0].y == coords_2_eat[1]:
         #     # self.blocks.add()
         #     self.add_tail(coords_2_eat)
-        mid = int(sideLength * 0.8) 
+        mid = int(sideLength * 0.8)
         if (self.head.x in range ((coords_2_eat[0] - mid), (coords_2_eat[0] + sideLength))  and self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid))):
             return True
 

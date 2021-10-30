@@ -33,26 +33,26 @@ score = 0
 #snakeBlocks = pygame.sprite.Group()
 
 
-class SnakeGame:
-    '''
-    Top level game class.  Will call functions as needed to keep the game running
-
-    Example::
-
-        snakegame =  SnakeGame()
-
-    :param some_param:
-    :type some_param: int
-    '''
-    def __init__(self):
-        self.some_param = 0
-
-    def print_board():
-         return 0
-    def snake_moves():
-         return 0
-    def add_tail():
-         return 0
+# class SnakeGame:
+#     '''
+#     Top level game class.  Will call functions as needed to keep the game running
+#
+#     Example::
+#
+#         snakegame =  SnakeGame()
+#
+#     :param some_param:
+#     :type some_param: int
+#     '''
+#     def __init__(self):
+#         self.some_param = 0
+#
+#     def print_board():
+#          return 0
+#     def snake_moves():
+#          return 0
+#     def add_tail():
+#          return 0
 
 def get_color(color_string):
     # central place to store all color values
@@ -110,6 +110,8 @@ def game_over(font_type, font_size, font_color, final_score):
     :type font_size: int
     :param font_color: font color
     :type font_color: RGB color
+    :param final_score: final score of game to display
+    :type final_score: int
     '''
     end_font = pygame.font.SysFont(font_type, font_size)
     # creating a text surface on which text will be drawn
