@@ -22,16 +22,18 @@ class Snake(pygame.sprite.Sprite):
     Example::
 
         snake =  Snake(100, 200)
-        snake.game()
+        snake._s(_)
 
     :param head: The head of the snake
-    :type head: block
+    :type head: Block
     :param testBlock: a block that acts as the 2nd block of the snake
-    :type testBlock: block
+    :type testBlock: Block
+    :param tail: tail of the snake
+    :type tail: Block
     :param blocks: A collection of blocks for each block of the snake
     :type blocks: sprite group from pygame's library which
     :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
-    :type direction: string
+    :type direction: str
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
@@ -119,3 +121,44 @@ class Snake(pygame.sprite.Sprite):
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
+
+    def add_tail(self, to_add):
+        '''
+        when called it will add to tail \n
+        Authors: AMA, ...
+
+        :param to_add:
+        :type to_add:
+        '''
+        #get current self.tail position
+        #increment self.tail by to_add
+
+    def did_eat_block(self ):
+        '''
+        checks if snake has encountered a block
+
+        :param _:
+        :type _:
+        '''
+        #get current head of snake
+        #get position of any blocks on board
+        #check for overlap of head and tail 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#

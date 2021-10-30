@@ -11,8 +11,8 @@ Welcome to Snake Game's documentation!
    :caption: Contents:
 
    install
-   snake
    Block
+   snake
    snakegame
    support
    work_cited
