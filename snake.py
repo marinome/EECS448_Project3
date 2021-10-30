@@ -102,7 +102,7 @@ class Snake(pygame.sprite.Sprite):
         #     x_change += self.head.speed
         # else:
         #     change = False
-        
+
 		#Function to update each block's location and adhere to snake movement rules
         if change and len(self.blocks) > 1:
             iter = 0
@@ -128,6 +128,7 @@ class Snake(pygame.sprite.Sprite):
             if (self.wall_check(screenDimensions)):
                 return 0
 		#return 0
+        self.did_eat_block((100,100))
 
     def render(self, screen):
         '''
@@ -167,18 +168,24 @@ class Snake(pygame.sprite.Sprite):
         '''
         #get current self.tail position
         #increment self.tail by to_add
+<<<<<<< HEAD
         for i in range (0, to_add):
             newBlock = Block(self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
+=======
+        self.blocks.add(Block(coords[0], coords[1]))
+>>>>>>> 5a6dc13c9670ecbea7def373d7542e212c945dcc
 
-    def did_eat_block(self ):
+    def did_eat_block(self, coords):
         '''
         checks if snake has encountered a block
 
-        :param _:
-        :type _:
+        :param coords: x y of the current, Food
+        :type coords: x,y
         '''
         #get current head of snake
+        copy_body = self.blocks.sprites()
+        print(copy_body[0].x, copy_body[0].y)
         #get position of any blocks on board
         #check for overlap of head and tail
 
