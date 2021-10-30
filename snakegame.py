@@ -16,9 +16,10 @@ Main file
 by: Morgan Marino, Michael Talaga
 '''
 
+# MADE COLOR FUNC TO STORE ALL COLORS -AMA
 #TODO: define colors, fonts
-green = (0, 255, 0)
-white = (255, 255, 255)
+# green = (0, 255, 0)
+# white = (255, 255, 255)
 #define display settings
 display_width = 500
 display_height = 400
@@ -54,6 +55,7 @@ class SnakeGame:
          return 0
 
 def get_color(color_string):
+    # central place to store all color values
     '''
     pass name of color, return RGB value for color
 
@@ -107,7 +109,7 @@ def game():
                 exit = True
 
 
-        screen.fill(green)
+        screen.fill(get_color("green"))
         snake.render(screen)
         snake.update()
         # display score
