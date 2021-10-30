@@ -53,7 +53,27 @@ class SnakeGame:
     def add_tail():
          return 0
 
+def get_color(color_string):
+    '''
+    pass name of color, return RGB value for color
 
+    :param color_string: name of color
+    :type color_string: str
+    :return _: The RGB value of the passed color
+    :rtype: tuple (R, G, B)
+    '''
+    match color_string:
+        case "red":
+            return (255,0,0)
+        case "green":
+            return (0,255,0)
+        case "blue":
+            return (0,0,255)
+        case "white":
+            return (255,255,255)
+        # return black of no match
+        case _:
+            return (0,0,0)
 
 # displaying Score function
 def show_score(choice, color, font, size):
@@ -91,7 +111,7 @@ def game():
         snake.render(screen)
         snake.update()
         # display score
-        show_score(score, white, 'times new roman', 20)
+        show_score(score, get_color("blue"), 'times new roman', 20)
         pygame.display.update()
         clock.tick(pace)
 
