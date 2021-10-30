@@ -16,7 +16,7 @@ Main file
 by: Morgan Marino, Michael Talaga
 '''
 
-# MADE COLOR FUNC TO STORE ALL COLORS -AMA
+# MADE COLOR FUNC TO STORE ALL COLORS -AMA 
 #TODO: define colors, fonts
 # green = (0, 255, 0)
 # white = (255, 255, 255)
