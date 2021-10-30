@@ -31,7 +31,7 @@ pace = 30 #Speed of the game
 
 class SnakeGame:
     '''
-    CLASS COMMENTS HERE
+    Top level game class.  Will call functions as needed to keep the game running
 
     Example::
 
@@ -55,8 +55,8 @@ def game():
     COMMENTS \n
     Autor: Michael Talaga
 
-    :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with keys. 
-    :type : snake object that is composed of blocks
+    :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with keys.
+    :type snake: Snake, made of, Block
     '''
     exit = False
     snake = Snake(200, 200) #Initializes snake with a starting position
@@ -75,7 +75,7 @@ def game():
 
 def main():
     '''
-    Main file to run the game and exit the system when it is finished.
+    Main file to run the game and exit the system when it is finished. \n
     Autor: Michael Talaga
 
     :param :
@@ -85,4 +85,5 @@ def main():
     pygame.quit()
     sys.exit()
 
-main()
+if __name__ == '__main__':
+    main()

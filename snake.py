@@ -112,7 +112,7 @@ class Snake(pygame.sprite.Sprite):
         Autor: Michael Talaga
 
         :param screen: The screen for the game
-        :type : pygame display
+        :type screen: pygame display
         '''
 		#for each in blocks
 		#snakeBlocks.draw(screen)
