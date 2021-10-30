@@ -41,6 +41,8 @@ class Food(pygame.sprite.Sprite):
     def changePosition(self, screenDimensions):
         '''
         Change the position of food upon collision with snake head, ensure it is at snake head
+        Author: Michael Talaga
+        
         :param screenDimensions: dimensions for the screen
         :type screenDimensions" tuple as (x, y) for (width, height)
         '''
@@ -50,4 +52,13 @@ class Food(pygame.sprite.Sprite):
     #def update(self, screenDimensions):
 
     def render(self, screen, color):
+        '''
+         Draw food object onto the screen. \n
+         Author: Michael Talaga
+
+        :param screen: The screen for the game
+        :type screen: pygame display
+        :param color: color of the food
+        :type color: str
+        '''
         pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
