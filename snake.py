@@ -4,6 +4,8 @@ import sys
 import random
 import time
 from Block import Block
+from Food import Food 
+
 pygame.init()
 
 #define white for snake
@@ -142,7 +144,7 @@ class Snake(pygame.sprite.Sprite):
         '''
         #get current head of snake
         #get position of any blocks on board
-        #check for overlap of head and tail 
+        #check for overlap of head and tail
 
 
 
