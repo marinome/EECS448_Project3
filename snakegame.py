@@ -21,7 +21,7 @@ by: Morgan Marino, Michael Talaga
 # green = (0, 255, 0)
 # white = (255, 255, 255)
 #define display settings
-display_width = 500
+display_width = 400
 display_height = 400
 screen = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("Snake Game - Group 3")

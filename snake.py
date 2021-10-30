@@ -30,8 +30,6 @@ class Snake(pygame.sprite.Sprite):
     :type size: int
     :param head: The head of the snake
     :type head: Block
-    :param testBlock: a block that acts as the 2nd block of the snake
-    :type testBlock: Block
     :param tail: tail of the snake
     :type tail: Block
     :param blocks: A collection of blocks for each block of the snake
@@ -43,15 +41,9 @@ class Snake(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.size = 1
         self.head = Block(200, 200)
-        self.testBlock = Block(200, 205) #test
-        self.testBlock2 = Block(200, 210) #test
-        self.testBlock3 = Block(200, 210) #test
-        self.tail = self.testBlock2
+        self.tail = Block(200, 210) #reassigned later
         self.blocks = pygame.sprite.Group() #create group of blocks
-        self.blocks.add(self.head)
-        self.blocks.add(self.testBlock)
-        self.blocks.add(self.testBlock2)
-        self.blocks.add(self.testBlock3)
+        self.blocks.add(self.head, self.tail)
         self.direction = "NULL" #setting direction snke will move in
 
 
@@ -135,7 +127,7 @@ class Snake(pygame.sprite.Sprite):
             if (self.wall_check(screenDimensions)):
                 return True
 		#return 0
-        if (self.did_eat_block((food.x,food.y)) == True):
+        if (self.did_eat_block((food.x,food.y), food.width) == True):
             food.changePosition(screenDimensions)
             self.add_tail(1)
 
@@ -186,17 +178,20 @@ class Snake(pygame.sprite.Sprite):
         for i in range (0, to_add):
             newBlock = Block(self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
+            self.tail = newBlock
             self.size += to_add
 
         #self.blocks.add(Block(coords[0], coords[1]))
 
 
-    def did_eat_block(self, coords_2_eat):
+    def did_eat_block(self, coords_2_eat, sideLength):
         '''
         checks if snake has encountered a block
 
         :param coords_2_eat: x y of the current, Food
         :type coords_2_eat: x,y
+        :param sideLength: length of comparison object
+        :type sideLength: int
         '''
         #get current head of snake
         copy_body = self.blocks.sprites()
@@ -207,7 +202,7 @@ class Snake(pygame.sprite.Sprite):
         # if copy_body[0].x == coords_2_eat[0] and copy_body[0].y == coords_2_eat[1]:
         #     # self.blocks.add()
         #     self.add_tail(coords_2_eat)
-        if self.head.x in range (coords_2_eat[0], coords_2_eat[0] + 6)  and self.head.y in range (coords_2_eat[1], coords_2_eat[1] + 6):
+        if self.head.x in range (coords_2_eat[0], (coords_2_eat[0] + sideLength))  and self.head.y in range (coords_2_eat[1], (coords_2_eat[1] + sideLength)):
             return True
 
 
