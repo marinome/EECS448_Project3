@@ -126,7 +126,7 @@ class Snake(pygame.sprite.Sprite):
                 #self.add_tail(1)
             #check for collision
             if (self.wall_check(screenDimensions)):
-                return 0
+                return True
 		#return 0
         self.did_eat_block((100,100))
 
@@ -153,6 +153,10 @@ class Snake(pygame.sprite.Sprite):
         '''
         if ((self.head.x + self.head.width) > (max_size[0])) or ((self.head.y + self.head.height) > (max_size[1])):
             return True
+        if (self.head.x < 0 or self.head.y < 0):
+            return True
+        else:
+            return False
 
 
 
@@ -172,7 +176,7 @@ class Snake(pygame.sprite.Sprite):
         for i in range (0, to_add):
             newBlock = Block(self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
-            
+
         self.blocks.add(Block(coords[0], coords[1]))
 
 
