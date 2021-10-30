@@ -7,7 +7,7 @@ import time
 pygame.init()
 
 '''
-Blcok.py
+Block.py
 by: Morgan Marino, Michael Talaga, AMA
 '''
 

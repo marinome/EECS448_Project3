@@ -63,6 +63,7 @@ def game():
 
     while not exit:
         for event in pygame.event.get():
+
             if event.type==pygame.QUIT:
                 exit = True
 
@@ -77,9 +78,7 @@ def main():
     '''
     Main file to run the game and exit the system when it is finished. \n
     Autor: Michael Talaga
-
-    :param :
-    :type :N/A
+    
     '''
     game()
     pygame.quit()

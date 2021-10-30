@@ -11,8 +11,9 @@ Welcome to Snake Game's documentation!
    :caption: Contents:
 
    install
-   snake
    Block
+   Food
+   snake
    snakegame
    support
    work_cited

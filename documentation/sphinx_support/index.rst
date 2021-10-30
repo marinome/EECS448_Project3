@@ -12,6 +12,7 @@ Welcome to Snake Game's documentation!
 
    install
    Block
+   Food
    snake
    snakegame
    support
