@@ -100,7 +100,7 @@ def show_score(score_2_display, color, font, size):
     # displaying text
     screen.blit(score_surface, score_rect)
 
-def game_over(font_type, font_size, font_color):
+def game_over(font_type, font_size, font_color, final_score):
     '''
     display final score over board
 
@@ -113,7 +113,7 @@ def game_over(font_type, font_size, font_color):
     '''
     end_font = pygame.font.SysFont(font_type, font_size)
     # creating a text surface on which text will be drawn
-    game_over_surface = end_font.render('Your Score is : ' + str(score), True, get_color(font_color))
+    game_over_surface = end_font.render('Your Score is : ' + str(final_score), True, get_color(font_color))
     # create a rectangular object for the text surface object
     game_over_rect = game_over_surface.get_rect()
     # setting position of the text
@@ -140,13 +140,15 @@ def game():
     while not exit:
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
-                exit = True
+                # exit = True
+                return snake.size
         screen.fill(get_color("green"))
         snake.render(screen)
         food.render(screen, get_color("red"))
         borderCollide = snake.update((display_width, display_height), food)
         if (borderCollide == True): #Border collision check
-            exit = True
+            # exit = True
+            return snake.size
         # display score #MT Made snake size for now
         show_score(snake.size, get_color("blue"), 'times new roman', 20)
         pygame.display.update()
@@ -158,8 +160,8 @@ def main():
     Autor: Michael Talaga
 
     '''
-    game()
-    game_over('times new roman', 50, "red")
+    # final_score =
+    game_over('times new roman', 50, "red", game())
     pygame.quit()
     sys.exit()
 
