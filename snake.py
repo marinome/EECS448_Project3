@@ -52,7 +52,7 @@ class Snake(pygame.sprite.Sprite):
         self.direction = "NULL" #setting direction snke will move in
 
 
-    def update(self):
+    def update(self, screenDimensions):
         '''
         Update movement of snake object via keyboard pressing. \n
         Autor: Michael Talaga
@@ -122,6 +122,9 @@ class Snake(pygame.sprite.Sprite):
 			#Make change to head
             self.head.x += x_change
             self.head.y += y_change
+            #check for collision
+            if (self.wall_check(screenDimensions)):
+                return 0
 		#return 0
         self.did_eat_block((100,100))
 
@@ -142,10 +145,13 @@ class Snake(pygame.sprite.Sprite):
     def wall_check(self, max_size):
         '''
         checks if snake has hit wall
-
+        Authors: Michael Talaga, ...
         :param max_size: max x & y size of game board
         :type max_size: Tuple of (x, y)
         '''
+        if ((self.head.x + self.head.width) > (max_size[0])) or ((self.head.y + self.head.height) > (max_size[1])):
+            return True
+
 
 
         return True
