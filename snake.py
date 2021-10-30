@@ -57,6 +57,8 @@ class Snake(pygame.sprite.Sprite):
         Update movement of snake object via keyboard pressing. \n
         Autor: Michael Talaga
 
+        :param screenDimensions: screen dimensions (width,height)
+        :type screenDimensions: tuple
         :param pressed: The pygame method for receiving a signal from the keyboard
         :type pressed: Pygame function
         :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this.
