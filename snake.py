@@ -10,6 +10,7 @@ pygame.init()
 
 #define white for snake
 white = (255, 255, 255)
+blue = (0,0,255)
 '''
 snake.py
 by: Morgan Marino, Michael Talaga, AMA
@@ -41,7 +42,7 @@ class Snake(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.size = 1
         self.head = Block(200, 200)
-        self.tail = Block(200, 210) #reassigned later
+        self.tail = Block(200, 205) #reassigned later
         self.blocks = pygame.sprite.Group() #create group of blocks
         self.blocks.add(self.head, self.tail)
         self.direction = "NULL" #setting direction snke will move in
@@ -144,7 +145,10 @@ class Snake(pygame.sprite.Sprite):
 		#snakeBlocks.draw(screen)
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
         for block in self.blocks:
-            pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
+            if block == self.head:
+                pygame.draw.rect(screen, blue, (block.x, block.y, block.width, block.height))
+            else:   
+                pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
     def wall_check(self, max_size):
         '''
@@ -192,6 +196,8 @@ class Snake(pygame.sprite.Sprite):
         :type coords_2_eat: x,y
         :param sideLength: length of comparison object
         :type sideLength: int
+        :param mid: middle of side length
+        :type mid: int
         '''
         #get current head of snake
         copy_body = self.blocks.sprites()
@@ -202,7 +208,8 @@ class Snake(pygame.sprite.Sprite):
         # if copy_body[0].x == coords_2_eat[0] and copy_body[0].y == coords_2_eat[1]:
         #     # self.blocks.add()
         #     self.add_tail(coords_2_eat)
-        if self.head.x in range (coords_2_eat[0], (coords_2_eat[0] + sideLength))  and self.head.y in range (coords_2_eat[1], (coords_2_eat[1] + sideLength)):
+        mid = int(sideLength * 0.8) 
+        if (self.head.x in range ((coords_2_eat[0] - mid), (coords_2_eat[0] + sideLength))  and self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid))):
             return True
 
 
