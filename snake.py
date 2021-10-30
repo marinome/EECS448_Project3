@@ -78,17 +78,31 @@ class Snake(pygame.sprite.Sprite):
             self.direction = "LEFT"
         elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
             self.direction = "RIGHT"
+        # changed to pattern matching -AMA
+        match self.direction:
+            case "UP":
+                y_change -= self.head.speed
+            case "DOWN":
+                y_change += self.head.speed
+            case "LEFT":
+                x_change -= self.head.speed
+            case "RIGHT":
+                x_change += self.head.speed
+            # default
+            case _:
+                change = False
 
-        if self.direction == "UP":
-            y_change -= self.head.speed
-        elif self.direction == "DOWN":
-            y_change += self.head.speed
-        elif self.direction == "LEFT":
-            x_change -= self.head.speed
-        elif self.direction == "RIGHT":
-            x_change += self.head.speed
-        else:
-            change = False
+        # if self.direction == "UP":
+        #     y_change -= self.head.speed
+        # elif self.direction == "DOWN":
+        #     y_change += self.head.speed
+        # elif self.direction == "LEFT":
+        #     x_change -= self.head.speed
+        # elif self.direction == "RIGHT":
+        #     x_change += self.head.speed
+        # else:
+        #     change = False
+        
 		#Function to update each block's location and adhere to snake movement rules
         if change and len(self.blocks) > 1:
             iter = 0
@@ -123,6 +137,17 @@ class Snake(pygame.sprite.Sprite):
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
+
+    def wall_check(self, max_size):
+        '''
+        checks if snake has hit wall
+
+        :param max_size: max x & y size of game board
+        :type max_size: Tuple of (x, y)
+        '''
+
+
+        return True
 
     def add_tail(self, to_add):
         '''
