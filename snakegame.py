@@ -143,7 +143,7 @@ def game():
     exit = False
     snake = Snake(200, 200) #Initializes snake with a starting position
     #random food placement
-    food = Food(random.randrange(1, display_width//10) * 10, random.randrange(1, display_height//10) * 10)
+    food = Food(random.randrange(1, display_width-10), random.randrange(1, display_height-10))
 
     while not exit:
         for event in pygame.event.get():
@@ -168,5 +168,11 @@ def main():
     pygame.quit()
     sys.exit()
 
-if __name__ == '__main__':
-    main()
+req_version = (3,10)
+curr_version = sys.version_info
+if curr_version >= req_version:
+    if __name__ == '__main__':
+        main()
+else:
+    # prompt user to update python
+    print("Please update your python version to 3.10 or greater")
