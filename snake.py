@@ -168,19 +168,22 @@ class Snake(pygame.sprite.Sprite):
         #increment self.tail by to_add
         self.blocks.add(Block(coords[0], coords[1]))
 
-    def did_eat_block(self, coords):
+    def did_eat_block(self, coords_2_eat):
         '''
         checks if snake has encountered a block
 
-        :param coords: x y of the current, Food
-        :type coords: x,y
+        :param coords_2_eat: x y of the current, Food
+        :type coords_2_eat: x,y
         '''
         #get current head of snake
         copy_body = self.blocks.sprites()
+        # troubleshooting
         print(copy_body[0].x, copy_body[0].y)
-        #get position of any blocks on board
+        #get position of any blocks on board - this is coords param
         #check for overlap of head and tail
-
+        # if copy_body[0].x == coords_2_eat[0] and copy_body[0].y == coords_2_eat[1]:
+        #     # self.blocks.add()
+        #     self.add_tail(coords_2_eat)
 
 
 
