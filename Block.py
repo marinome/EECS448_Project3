@@ -32,9 +32,9 @@ class Block(pygame.sprite.Sprite):
     :param height: block height
     :type height: int
     '''
-    def __init__(self, x, y):
+    def __init__(self, id, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.id = 1 #block number
+        self.id = id #block number
         self.x = x
         self.y = y
         self.speed = 4
