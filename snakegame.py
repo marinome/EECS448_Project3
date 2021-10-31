@@ -132,7 +132,7 @@ def game():
     COMMENTS \n
     Author: Michael Talaga
 
-    :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with keys.
+    :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with arrow keys or wasd.
     :type snake: Snake, made of, Block
     '''
     exit = False
