@@ -127,6 +127,23 @@ def game_over(font_type, font_size, font_color, final_score):
     # after 2 seconds we will quit the program
     time.sleep(3)
 
+'''
+Author: Mason Otto
+this will add grid lines to the screen
+needs adjusting, this can be fully implemented in project 4 -MXO
+'''
+def gridScreen(gridSize, color1, color2):
+    count = 0
+    for x in range(0, 400, gridSize):
+        for y in range(0, 400, gridSize):
+            grid = pygame.Rect(x, y, gridSize, gridSize)
+            if (count % 2 == 0):
+                pygame.draw.rect(screen, color1, grid, 0)
+            else:
+                pygame.draw.rect(screen, color2, grid, 0)
+            count = count + 1
+
+
 def game():
     '''
     COMMENTS \n
@@ -146,6 +163,8 @@ def game():
                 # exit = True
                 return snake.size
         screen.fill(get_color("green"))
+        #following will add grid to screen, can implement in project 4 when it looks prettier -MXO
+        #gridScreen(15, (0,255,0), (0,200,0))
         snake.render(screen)
         food.render(screen, get_color("red"))
         borderCollide = snake.update((display_width, display_height), food)
