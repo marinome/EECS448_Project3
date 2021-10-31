@@ -15,7 +15,7 @@ by: Morgan Marino, Michael Talaga, AMA
 
 class Block(pygame.sprite.Sprite):
     '''
-    CLASS COMMENTS HERE
+    sprites that make up the snake body segments
 
     Example::
 
@@ -40,4 +40,3 @@ class Block(pygame.sprite.Sprite):
         self.speed = 4
         self.width = 10
         self.height = 10
-        

@@ -13,6 +13,7 @@ white = (255, 255, 255)
 blue = (0,0,255)
 '''
 snake.py
+date: oct 26 2021
 by: Morgan Marino, Michael Talaga, AMA
 '''
 
@@ -20,7 +21,8 @@ by: Morgan Marino, Michael Talaga, AMA
 class Snake(pygame.sprite.Sprite):
     '''
     Creates a snake class which will move around on the board and be controled
-    by the user. It will avoid collisions with itself and the boundaries.
+    by the user. If it encounters food it will grow the snake.  If the snake touches
+    the edge of the board, the game will end.
 
     Example::
 
@@ -51,12 +53,12 @@ class Snake(pygame.sprite.Sprite):
     def update(self, screenDimensions, food):
         '''
         Update movement of snake object via keyboard pressing. \n
-        Autor: Michael Talaga
+        Author: Michael Talaga
 
         :param screenDimensions: screen dimensions (width,height)
-        :type screenDimensions: tuple
+        :type screenDimensions: Tuple
         :param food: Food object to check for collision
-        :type food: food sprite
+        :type food: Food
         :param pressed: The pygame method for receiving a signal from the keyboard
         :type pressed: Pygame function
         :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this.
@@ -92,17 +94,6 @@ class Snake(pygame.sprite.Sprite):
             case _:
                 change = False
 
-        # if self.direction == "UP":
-        #     y_change -= self.head.speed
-        # elif self.direction == "DOWN":
-        #     y_change += self.head.speed
-        # elif self.direction == "LEFT":
-        #     x_change -= self.head.speed
-        # elif self.direction == "RIGHT":
-        #     x_change += self.head.speed
-        # else:
-        #     change = False
-
 		#Function to update each block's location and adhere to snake movement rules
         if change and len(self.blocks) > 1:
             iter = 0
@@ -136,7 +127,7 @@ class Snake(pygame.sprite.Sprite):
     def render(self, screen):
         '''
         Draw objects from snakes block group onto the screen as rectangles. \n
-        Autor: Michael Talaga
+        Author: Michael Talaga
 
         :param screen: The screen for the game
         :type screen: pygame display
@@ -165,10 +156,6 @@ class Snake(pygame.sprite.Sprite):
         else:
             return False
 
-
-
-        return True
-
     def add_tail(self, to_add):
         '''
         when called it will add to tail and add block to block group \n
@@ -191,10 +178,11 @@ class Snake(pygame.sprite.Sprite):
 
     def did_eat_block(self, coords_2_eat, sideLength):
         '''
-        checks if snake has encountered a block
+        checks if snake has encountered a block \n
+        Authors: AMA, Michael Talaga
 
         :param coords_2_eat: x y of the current, Food
-        :type coords_2_eat: x,y
+        :type coords_2_eat: [x,y] or (x,y)
         :param sideLength: length of comparison object
         :type sideLength: int
         :param mid: middle of side length
@@ -206,11 +194,9 @@ class Snake(pygame.sprite.Sprite):
         print(copy_body[0].x, copy_body[0].y)
         #get position of any blocks on board - this is coords param
         #check for overlap of head and tail
-        # if copy_body[0].x == coords_2_eat[0] and copy_body[0].y == coords_2_eat[1]:
-        #     # self.blocks.add()
-        #     self.add_tail(coords_2_eat)
         mid = int(sideLength * 0.8)
-        if (self.head.x in range ((coords_2_eat[0] - mid), (coords_2_eat[0] + sideLength))  and self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid))):
+        if (self.head.x in range ((coords_2_eat[0] - mid), (coords_2_eat[0] + sideLength))
+            and (self.head.y in range ((coords_2_eat[1] - mid)), (coords_2_eat[1] + mid))):
             return True
 
 

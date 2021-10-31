@@ -13,7 +13,8 @@ pygame.init()
 
 '''
 Main file
-by: Morgan Marino, Michael Talaga
+date: oct 26 2021
+by: Morgan Marino, Michael Talaga, AMA
 '''
 
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
@@ -129,7 +130,7 @@ def game_over(font_type, font_size, font_color, final_score):
 def game():
     '''
     COMMENTS \n
-    Autor: Michael Talaga
+    Author: Michael Talaga
 
     :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with keys.
     :type snake: Snake, made of, Block
@@ -159,7 +160,7 @@ def game():
 def main():
     '''
     Main file to run the game and exit the system when it is finished. \n
-    Autor: Michael Talaga
+    Author: Michael Talaga
 
     '''
     # final_score =
