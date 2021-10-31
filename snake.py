@@ -42,11 +42,11 @@ class Snake(pygame.sprite.Sprite):
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.size = 1
-        self.head = Block(200, 200)
-        self.tail = Block(200, 205) #reassigned later
+        self.size = 2
+        self.head = Block(1, 200, 200)
+        self.tail = Block(2, 200, 210) #reassigned later
         self.blocks = pygame.sprite.Group() #create group of blocks
-        self.blocks.add(self.head, self.tail)
+        self.blocks.add(self.tail)
         self.direction = "NULL" #setting direction snke will move in
 
 
@@ -67,6 +67,8 @@ class Snake(pygame.sprite.Sprite):
         :type y_change: int
         :param x_change: The amount the snake moves in the horizontal direction per turn (can be positive or negative)
         :type x_change: int
+        :return: return if there was an unacceptable collision
+        :return type: boolean
         '''
         pressed = pygame.key.get_pressed()
         change = True
@@ -95,21 +97,17 @@ class Snake(pygame.sprite.Sprite):
                 change = False
 
 		#Function to update each block's location and adhere to snake movement rules
-        if change and len(self.blocks) > 1:
-            iter = 0
+        if change and len(self.blocks) > 0:
+            prevx = self.head.x
+            prevy = self.head.y
             for block in self.blocks:
-                if iter == 0:
-                    prevx = block.x
-                    prevy = block.y
-                elif iter != 0:
-                    currentx = block.x
-                    currenty = block.y
-                    block.x = prevx
-                    block.y = prevy
-                    prevx = currentx
-                    prevy = currenty
+                currentx = block.x
+                currenty = block.y
+                block.x = prevx
+                block.y = prevy
+                prevx = currentx
+                prevy = currenty
 
-                iter+=1
 			#Make change to head
             self.head.x += x_change
             self.head.y += y_change
@@ -118,10 +116,17 @@ class Snake(pygame.sprite.Sprite):
             #check for collision
             if (self.wall_check(screenDimensions)):
                 return True
-		#return 0
+		#check for snake body collision
+        for block in self.blocks:
+            if(block.id not in range (2, 8)):
+                if (self.did_eat_block((block.x,block.y), block.width) == True):
+                    return True
+        #collision check with food 
         if (self.did_eat_block((food.x,food.y), food.width) == True):
             food.changePosition(screenDimensions)
             self.add_tail(1)
+        
+
 
 
     def render(self, screen):
@@ -131,15 +136,16 @@ class Snake(pygame.sprite.Sprite):
 
         :param screen: The screen for the game
         :type screen: pygame display
+        :param head: Head of snake
+        :type head: block
         '''
 		#for each in blocks
 		#snakeBlocks.draw(screen)
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
+        head = self.head
+        pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
         for block in self.blocks:
-            if block == self.head:
-                pygame.draw.rect(screen, blue, (block.x, block.y, block.width, block.height))
-            else:
-                pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
+            pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
     def wall_check(self, max_size):
         '''
@@ -168,10 +174,11 @@ class Snake(pygame.sprite.Sprite):
         #increment self.tail by to_add
 
         for i in range (0, to_add):
-            newBlock = Block(self.tail.x, self.tail.y)
+            self.size += to_add
+            newBlock = Block(self.size, self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
             self.tail = newBlock
-            self.size += to_add
+            
 
         #self.blocks.add(Block(coords[0], coords[1]))
 
@@ -193,11 +200,13 @@ class Snake(pygame.sprite.Sprite):
         # troubleshooting
         print(copy_body[0].x, copy_body[0].y)
         #get position of any blocks on board - this is coords param
+        
         #check for overlap of head and tail
         mid = int(sideLength * 0.8)
-        if (self.head.x in range ((coords_2_eat[0] - mid), (coords_2_eat[0] + sideLength))
-            and (self.head.y in range ((coords_2_eat[1] - mid)), (coords_2_eat[1] + mid))):
+        if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + sideLength)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + sideLength)))):
             return True
+
+
 
 
 
