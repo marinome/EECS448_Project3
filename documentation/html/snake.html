@@ -132,7 +132,10 @@ the edge of the board, the game will end.</p>
 <p>Author: Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>screen</strong> (<em>pygame display</em>) – The screen for the game</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>screen</strong> (<em>pygame display</em>) – The screen for the game</p></li>
+<li><p><strong>head</strong> (<em>block</em>) – Head of snake</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -153,6 +156,12 @@ the edge of the board, the game will end.</p>
 <li><p><strong>x_change</strong> (<em>int</em>) – The amount the snake moves in the horizontal direction per turn (can be positive or negative)</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>return if there was an unacceptable collision</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -168,14 +177,6 @@ the edge of the board, the game will end.</p>
 </dl>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="snake.blue">
-<span class="sig-prename descclassname"><span class="pre">snake.</span></span><span class="sig-name descname"><span class="pre">blue</span></span><em class="property"> <span class="pre">=</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></em><a class="headerlink" href="#snake.blue" title="Permalink to this definition">¶</a></dt>
-<dd><p>snake.py
-date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA</p>
 </dd></dl>
 
 </section>

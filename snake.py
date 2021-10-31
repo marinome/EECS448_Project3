@@ -8,9 +8,13 @@ from Food import Food
 
 pygame.init()
 
-#define white for snake
+
+#define colors
 white = (255, 255, 255)
 blue = (0,0,255)
+'''
+:meta private:
+'''
 '''
 snake.py
 date: oct 26 2021
@@ -121,11 +125,11 @@ class Snake(pygame.sprite.Sprite):
             if(block.id not in range (2, 8)):
                 if (self.did_eat_block((block.x,block.y), block.width) == True):
                     return True
-        #collision check with food 
+        #collision check with food
         if (self.did_eat_block((food.x,food.y), food.width) == True):
             food.changePosition(screenDimensions)
             self.add_tail(1)
-        
+
 
 
 
@@ -178,7 +182,7 @@ class Snake(pygame.sprite.Sprite):
             newBlock = Block(self.size, self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
             self.tail = newBlock
-            
+
 
         #self.blocks.add(Block(coords[0], coords[1]))
 
@@ -200,7 +204,7 @@ class Snake(pygame.sprite.Sprite):
         # troubleshooting
         print(copy_body[0].x, copy_body[0].y)
         #get position of any blocks on board - this is coords param
-        
+
         #check for overlap of head and tail
         mid = int(sideLength * 0.8)
         if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + sideLength)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + sideLength)))):
