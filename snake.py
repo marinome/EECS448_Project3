@@ -78,6 +78,8 @@ class Snake(pygame.sprite.Sprite):
         change = True
         y_change = 0
         x_change = 0
+
+        #arrow key movement
         if pressed[pygame.K_UP] and self.direction != "DOWN":
             self.direction = "UP"
         elif pressed[pygame.K_DOWN] and self.direction != "UP":
@@ -86,6 +88,17 @@ class Snake(pygame.sprite.Sprite):
             self.direction = "LEFT"
         elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
             self.direction = "RIGHT"
+
+        #added "wasd" movement -MXO
+        if pressed[pygame.K_w] and self.direction != "DOWN":
+            self.direction = "UP"
+        elif pressed[pygame.K_s] and self.direction != "UP":
+            self.direction = "DOWN"
+        if pressed[pygame.K_a] and self.direction != "RIGHT":
+            self.direction = "LEFT"
+        elif pressed[pygame.K_d] and self.direction != "LEFT":
+            self.direction = "RIGHT"
+
         # changed to pattern matching -AMA
         match self.direction:
             case "UP":
