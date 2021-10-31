@@ -37,6 +37,6 @@ class Block(pygame.sprite.Sprite):
         self.id = id #block number
         self.x = x
         self.y = y
-        self.speed = 4
+        self.speed = 6
         self.width = 10
         self.height = 10
