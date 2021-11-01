@@ -1,12 +1,12 @@
 Accounting:
           10/11  10/12  10/13  10/14  10/15  10/16  10/17  10/18  10/19  10/20  10/21  10/22  10/23  10/24  10/25  10/26  10/27  10/28  10/29  10/30  10/31     TOTAL
-Adam:			                                                                               1      .5
-Divya:                                                                                   1      .5                  .5             1      1            .5
-Mason:                                                                                   1      .5                          .5                          3
-Michael:			                                                                           1      .5
-Morgan:                                                                                  1      1             .5     1             2      1
+Adam:			                                                                               1      .5                                           1.5
+Divya:                                                                                   1      .5                  .5             1      1            .5        4.5
+Mason:                                                                                   1      .5                          .5                          3        5.0
+Michael:			                                                                           1      .5                                               1.5
+Morgan:                                                                                  1      1             .5     1             2      3            .5        9.0
 
-Total: 
+Total: 21.5 hours
 
 Estimate of person-hours: 30
-  The reason we picked 30 hours is because we are hoping this will be much simpler than our last project. Based upon our busy schedules, we attempted to pick something that would lend itself nicely to our knowledge in Python. Our goal is to can create a simple, but clean project in about 30 hours that we can make more complex in Project 4 and avoid wasting time continuing to debug Project 3.
+  The reason we picked 30 hours is because we are hoping this will be much simpler than our last project. We had a late start due to our Project 2 Demo being after the scheduled time, so we attempted to pick something that would lend itself nicely to our knowledge in Python. Our goal is to can create a simple, but clean project in about 30 hours that we can make more complex in Project 4 and avoid wasting time continuing to debug Project 3.
