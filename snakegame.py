@@ -61,9 +61,9 @@ def get_color(color_string):
     pass name of color, return RGB value for color
 
     :param color_string: name of color
-    :type color_string: str
+    :type color_string: String
     :return _: The RGB value of the passed color
-    :rtype: tuple (red, green, blue)
+    :rtype: Tuple (red, green, blue)
     '''
     match color_string:
         case "red":
@@ -127,12 +127,14 @@ def game_over(font_type, font_size, font_color, final_score):
     # after 2 seconds we will quit the program
     time.sleep(3)
 
-'''
-Author: Mason Otto
-this will add grid lines to the screen
-needs adjusting, this can be fully implemented in project 4 -MXO
-'''
 def gridScreen(gridSize, color1, color2):
+    '''
+    this will add grid lines to the screen \n
+    Author: Mason Otto
+    needs adjusting, this can be fully implemented in project 4 -MXO
+
+    :meta private:
+    '''
     count = 0
     for x in range(0, 400, gridSize):
         for y in range(0, 400, gridSize):
@@ -179,10 +181,9 @@ def game():
 def main():
     '''
     Main file to run the game and exit the system when it is finished. \n
-    Author: Michael Talaga
+    Author: Michael Talaga, AMA
 
     '''
-    # final_score =
     game_over('times new roman', 50, "red", game())
     pygame.quit()
     sys.exit()

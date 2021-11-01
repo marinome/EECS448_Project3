@@ -64,15 +64,15 @@ class Snake(pygame.sprite.Sprite):
         :param food: Food object to check for collision
         :type food: Food
         :param pressed: The pygame method for receiving a signal from the keyboard
-        :type pressed: Pygame function
+        :type pressed: pygame function
         :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this.
-        :type change: boolean
+        :type change: Boolean
         :param y_change: The amount the snake moves in the vertical direction per turn (can be positive or negative)
         :type y_change: int
         :param x_change: The amount the snake moves in the horizontal direction per turn (can be positive or negative)
         :type x_change: int
         :return: return if there was an unacceptable collision
-        :return type: boolean
+        :return type: Boolean
         '''
         pressed = pygame.key.get_pressed()
         change = True
@@ -143,9 +143,6 @@ class Snake(pygame.sprite.Sprite):
             food.changePosition(screenDimensions)
             self.add_tail(1)
 
-
-
-
     def render(self, screen):
         '''
         Draw objects from snakes block group onto the screen as rectangles. \n
@@ -154,7 +151,7 @@ class Snake(pygame.sprite.Sprite):
         :param screen: The screen for the game
         :type screen: pygame display
         :param head: Head of snake
-        :type head: block
+        :type head: Block
         '''
 		#for each in blocks
 		#snakeBlocks.draw(screen)
@@ -167,7 +164,7 @@ class Snake(pygame.sprite.Sprite):
     def wall_check(self, max_size):
         '''
         checks if snake has hit wall \n
-        Authors: Michael Talaga, ...
+        Authors: Michael Talaga
 
         :param max_size: max x & y size of game board
         :type max_size: Tuple of (x, y)
@@ -187,17 +184,11 @@ class Snake(pygame.sprite.Sprite):
         :param to_add: integer to increment the size of the snake body
         :type to_add: int
         '''
-        #get current self.tail position
-        #increment self.tail by to_add
-
         for i in range (0, to_add):
             self.size += to_add
             newBlock = Block(self.size, self.tail.x, self.tail.y)
             self.blocks.add(newBlock)
             self.tail = newBlock
-
-
-        #self.blocks.add(Block(coords[0], coords[1]))
 
 
     def did_eat_block(self, coords_2_eat, sideLength):
@@ -216,8 +207,6 @@ class Snake(pygame.sprite.Sprite):
         copy_body = self.blocks.sprites()
         # troubleshooting
         print(copy_body[0].x, copy_body[0].y)
-        #get position of any blocks on board - this is coords param
-
         #check for overlap of head and tail
         mid = int(sideLength * 0.8)
         if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + sideLength)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + sideLength)))):

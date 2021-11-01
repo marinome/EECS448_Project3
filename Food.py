@@ -21,6 +21,7 @@ class Food(pygame.sprite.Sprite):
     Example::
 
         food =  Food(100, 200)
+        food._(_)
 
     :param x: x position
     :type x: int

@@ -134,7 +134,7 @@ the edge of the board, the game will end.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>screen</strong> (<em>pygame display</em>) – The screen for the game</p></li>
-<li><p><strong>head</strong> (<em>block</em>) – Head of snake</p></li>
+<li><p><strong>head</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – Head of snake</p></li>
 </ul>
 </dd>
 </dl>
@@ -150,8 +150,8 @@ the edge of the board, the game will end.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>screenDimensions</strong> (<em>Tuple</em>) – screen dimensions (width,height)</p></li>
 <li><p><strong>food</strong> (<a class="reference internal" href="Food.html#Food.Food" title="Food.Food"><em>Food</em></a>) – Food object to check for collision</p></li>
-<li><p><strong>pressed</strong> (<em>Pygame function</em>) – The pygame method for receiving a signal from the keyboard</p></li>
-<li><p><strong>change</strong> (<em>boolean</em>) – Dictating if the snake will change its direction. Blocks will readjust location based on this.</p></li>
+<li><p><strong>pressed</strong> (<em>pygame function</em>) – The pygame method for receiving a signal from the keyboard</p></li>
+<li><p><strong>change</strong> (<em>Boolean</em>) – Dictating if the snake will change its direction. Blocks will readjust location based on this.</p></li>
 <li><p><strong>y_change</strong> (<em>int</em>) – The amount the snake moves in the vertical direction per turn (can be positive or negative)</p></li>
 <li><p><strong>x_change</strong> (<em>int</em>) – The amount the snake moves in the horizontal direction per turn (can be positive or negative)</p></li>
 </ul>
@@ -160,7 +160,7 @@ the edge of the board, the game will end.</p>
 <dd class="field-even"><p>return if there was an unacceptable collision</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>boolean</p>
+<dd class="field-odd"><p>Boolean</p>
 </dd>
 </dl>
 </dd></dl>
@@ -169,7 +169,7 @@ the edge of the board, the game will end.</p>
 <dt class="sig sig-object py" id="snake.Snake.wall_check">
 <span class="sig-name descname"><span class="pre">wall_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.wall_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>checks if snake has hit wall</p>
-<p>Authors: Michael Talaga, …</p>
+<p>Authors: Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>max_size</strong> (<em>Tuple of</em><em> (</em><em>x</em><em>, </em><em>y</em><em>)</em>) – max x &amp; y size of game board</p>

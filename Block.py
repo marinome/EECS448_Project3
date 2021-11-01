@@ -21,6 +21,8 @@ class Block(pygame.sprite.Sprite):
 
         block =  Block(100, 200)
 
+    :param id: sprite unique id 
+    :type id: int
     :param x: x position
     :type x: int
     :param y: y postiion
