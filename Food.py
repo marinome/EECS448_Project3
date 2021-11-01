@@ -47,8 +47,8 @@ class Food(pygame.sprite.Sprite):
         :param screenDimensions: dimensions for the screen
         :type screenDimensions: tuple as (x, y) for (width, height)
         '''
-        self.x = random.randrange(1, screenDimensions[0]-10)
-        self.y = random.randrange(1, screenDimensions[1]-10)
+        self.x = random.randrange(5, screenDimensions[0]-10)
+        self.y = random.randrange(5, screenDimensions[1]-10)
 
     #def update(self, screenDimensions):
 
