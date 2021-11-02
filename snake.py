@@ -130,8 +130,7 @@ class Snake(pygame.sprite.Sprite):
             self.head.y += y_change
             #if self.head.y < 50: #tail add test
                 #self.add_tail(1)
-            #check for collision
-            if (self.wall_check(screenDimensions)):
+            if (self.wall_check(screenDimensions)): #check for collision
                 return True
 		#check for snake body collision
         for block in self.blocks:
@@ -156,6 +155,7 @@ class Snake(pygame.sprite.Sprite):
 		#for each in blocks
 		#snakeBlocks.draw(screen)
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
+        #not sure if it's this function, but the rectangles are making it so that the snake head and food don't match up -MEM
         head = self.head
         pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
         for block in self.blocks:

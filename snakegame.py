@@ -19,8 +19,6 @@ by: Morgan Marino, Michael Talaga, AMA
 
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
 #TODO: define colors, fonts
-# green = (0, 255, 0)
-# white = (255, 255, 255)
 #define display settings
 display_width = 400
 display_height = 400
@@ -63,20 +61,21 @@ def get_color(color_string):
     :param color_string: name of color
     :type color_string: String
     :return _: The RGB value of the passed color
-    :rtype: Tuple (red, green, blue)
+    :rtype: Tuple (red, black, yellow)
+    #used to be (red,green,blue) -MEM
     '''
     match color_string:
-        case "red":
+        case "red": #food
             return (255,0,0)
-        case "green":
-            return (0,255,0)
-        case "blue":
-            return (0,0,255)
-        case "white":
-            return (255,255,255)
-        # return black of no match
-        case _:
+        case "black": #background
             return (0,0,0)
+        case "yellow": #head
+            return (255,255,0)
+        case "white": #tail
+            return (255,255,255)
+        # return blue if no match
+        case _:
+            return (0,0,255)
 
 
 def show_score(score_2_display, color, font, size):
@@ -164,7 +163,8 @@ def game():
             if event.type==pygame.QUIT:
                 # exit = True
                 return snake.size
-        screen.fill(get_color("green"))
+        screen.fill(get_color("black"))
+        #should we make border so it's easier to know when you're about to lose? -MEM
         #following will add grid to screen, can implement in project 4 when it looks prettier -MXO
         #gridScreen(15, (0,255,0), (0,200,0))
         snake.render(screen)
@@ -174,7 +174,7 @@ def game():
             # exit = True
             return snake.size
         # display score #MT Made snake size for now
-        show_score(snake.size, get_color("blue"), 'times new roman', 20)
+        show_score(snake.size, get_color("yellow"), 'times new roman', 20)
         pygame.display.update()
         clock.tick(pace)
 
