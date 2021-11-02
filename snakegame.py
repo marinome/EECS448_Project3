@@ -61,8 +61,8 @@ def get_color(color_string):
     :param color_string: name of color
     :type color_string: String
     :return _: The RGB value of the passed color
-    :rtype: Tuple (red, black, yellow)
-    #used to be (red,green,blue) -MEM
+    :rtype: Tuple (red, green, blue)
+    #used to be (red,green,blue) -MEM @MEM -> the tuple that is returned is the defined by the amount of red, green and blue, hence the RGB 
     '''
     match color_string:
         case "red": #food
