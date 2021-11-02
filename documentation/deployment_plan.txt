@@ -1,0 +1,10 @@
+'''
+deployment_plan.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "What are the steps required to deploy your project? Who is the potential market? What will it cost to deploy it?" -Project 4.pdf
+'''
+Deployment Plan:
+        #idea: App Store costs, costs to get your game on Xbox, costs to print disks, costs to buy domains, cost to attend conventions and conferences
+	#500-700 words
