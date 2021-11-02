@@ -1,0 +1,9 @@
+'''
+integration_strategy.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "Describe how your team integrated code from the team members. Which Integration Strategy do you think your team used?" -Project 4.pdf
+'''
+Integration Strategy:
+        #250-350 words words
