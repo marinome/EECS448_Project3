@@ -62,20 +62,26 @@ def get_color(color_string):
     :type color_string: String
     :return _: The RGB value of the passed color
     :rtype: Tuple (red, green, blue)
-    #used to be (red,green,blue) -MEM @MEM -> the tuple that is returned is the defined by the amount of red, green and blue, hence the RGB 
+    #used to be (red,green,blue) -MEM
+    @MEM -> the tuple that is returned, the color, is defined by the amount of red, green and blue, hence the RGB
     '''
+    # @MEM lets not delete code, just add another case, this is a generic func 
     match color_string:
-        case "red": #food
+        case "red":
             return (255,0,0)
-        case "black": #background
+        case "black":
             return (0,0,0)
-        case "yellow": #head
+        case "yellow":
             return (255,255,0)
-        case "white": #tail
+        case "white":
             return (255,255,255)
-        # return blue if no match
-        case _:
+        case "blue":
             return (0,0,255)
+        case "green":
+            return (0,255,0)
+        # default, some odd color
+        case _:
+            return (70,70,70)
 
 
 def show_score(score_2_display, color, font, size):
