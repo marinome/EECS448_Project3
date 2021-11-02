@@ -1,0 +1,9 @@
+'''
+code_review.txt
+
+created: Oct 2021
+by: Morgan Marino
+description: "Document the following: List of faults detected, Description of each fault, Who was assigned to fix each fault, How the fault was fixed" -Project 4.pdf
+'''
+Code Review:
+        #500-700 words
