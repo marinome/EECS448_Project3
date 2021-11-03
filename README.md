@@ -13,8 +13,8 @@ The Snake Game, otherwise known as "Snake" made it's debut in 1997. It has since
 The object of the game is to make your snake fill up the entire playing board. You may eat "apples" along the way to gain length, but be careful, because if you attempt to eat a border or yourself, you instantly lose!
 
 ### Versions
-1.0 - Project 3 result
-2.0 - Project 4 result
+- 0.1 - Project 3
+- 1.0 - Project 4
 
 ### Dependencies
 
@@ -41,5 +41,6 @@ The object of the game is to make your snake fill up the entire playing board. Y
 
 ## Works Cited
 
+- See README.html
 * https://www.kosbie.net/cmu/fall-10/15-110/handouts/snake/snake.html for help with Pygame
 * https://www.edureka.co/blog/snake-game-with-pygame/ for help with mouse-click response

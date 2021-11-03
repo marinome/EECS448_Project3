@@ -20,11 +20,13 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = 'Snake Game'
-copyright = '2021, AMA, MT, MXO, DS, MM'
-author = 'AMA, MT, MXO, DS, MM'
+copyright = '2021, AMA, MT, MXO, DS, MEM'
+author = 'AMA, MT, MXO, DS, MEM'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '0.1 E.O.S. Oct 31 2021'
+
+relese = '1.0'
 
 
 # -- General configuration ---------------------------------------------------

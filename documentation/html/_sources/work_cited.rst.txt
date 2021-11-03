@@ -5,7 +5,7 @@ Works Cited
 Authors:
 --------
 
-  Adam Abernathy (AMA), Michael Talaga (MT), Mason Otto (MXO), Divya Shakamuri (DS), Morgan Marino (MM)
+  Adam Abernathy (AMA), Michael Talaga (MT), Mason Otto (MXO), Divya Shakamuri (DS), Morgan Marino (MEM)
 
 References:
 -----------
