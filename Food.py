@@ -63,4 +63,9 @@ class Food(pygame.sprite.Sprite):
         :param color: color of the food
         :type color: String
         '''
-        pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
+        if (self.x > 30 and self.x < 395 and self.y > 30 and self.y < 395):
+            pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
+        else:
+            self.x = random.randrange(30, 390)
+            self.y = random.randrange(30, 390)
+            self.render(screen,color)
