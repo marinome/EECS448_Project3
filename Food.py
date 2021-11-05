@@ -66,6 +66,6 @@ class Food(pygame.sprite.Sprite):
         if (self.x > 30 and self.x < 395 and self.y > 30 and self.y < 395):
             pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
         else:
-            self.x = random.randrange(30, 390)
-            self.y = random.randrange(30, 390)
+            self.x = random.randrange(30, 390) #can change to not hard coded values later, but this allows food to spawn in border -MXO
+            self.y = random.randrange(30, 390) #can change to not hard coded values later, but this allows food to spawn in border -MXO
             self.render(screen,color)
