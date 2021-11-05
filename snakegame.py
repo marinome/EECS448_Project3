@@ -20,8 +20,8 @@ by: Morgan Marino, Michael Talaga, AMA
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
 #TODO: define colors, fonts
 #define display settings
-display_width = 500
-display_height = 500
+display_width = 425
+display_height = 425
 screen = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("Snake Game - Group 3")
 clock = pygame.time.Clock()
@@ -141,8 +141,8 @@ def gridScreen(gridSize, color1, color2):
     :meta private:
     '''
     count = 0
-    for x in range(0, 400, gridSize):
-        for y in range(0, 400, gridSize):
+    for x in range(25, 400, gridSize):
+        for y in range(25, 400, gridSize):
             grid = pygame.Rect(x, y, gridSize, gridSize)
             if (count % 2 == 0):
                 pygame.draw.rect(screen, color1, grid, 0)
@@ -172,7 +172,7 @@ def game():
         screen.fill(get_color("black"))
         #should we make border so it's easier to know when you're about to lose? -MEM
         #following will add grid to screen, can implement in project 4 when it looks prettier -MXO
-        #gridScreen(15, (0,255,0), (0,200,0))
+        gridScreen(15, (0,255,0), (0,200,0))
         snake.render(screen)
         food.render(screen, get_color("red"))
         borderCollide = snake.update((display_width, display_height), food)
