@@ -173,7 +173,6 @@ def game():
         #should we make border so it's easier to know when you're about to lose? -MEM 
         # border added -MXO
         #need to fix food spawn so they are within the border -MXO
-        #following will add grid to screen, can implement in project 4 when it looks prettier -MXO
         gridScreen(15, (0,255,0), (0,200,0))
         snake.render(screen)
         food.render(screen, get_color("red"))
