@@ -175,7 +175,9 @@ def game():
         gridScreen(15, (0,255,0), (0,200,0))
         snake.render(screen)
         food.render(screen, get_color("red"))
-        borderCollide = snake.update((display_width, display_height), food)
+        borderCollide = snake.wall_collision(25,390,25,390)
+        snake.update((display_width, display_height), food)
+        #borderCollide = snake.update((display_width, display_height), food) #commented this out to make changes for the collision to happen at border not window -MXO
         if (borderCollide == True): #Border collision check
             # exit = True
             return snake.size
