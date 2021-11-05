@@ -20,8 +20,8 @@ by: Morgan Marino, Michael Talaga, AMA
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
 #TODO: define colors, fonts
 #define display settings
-display_width = 400
-display_height = 400
+display_width = 500
+display_height = 500
 screen = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("Snake Game - Group 3")
 clock = pygame.time.Clock()
