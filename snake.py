@@ -161,6 +161,12 @@ class Snake(pygame.sprite.Sprite):
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
+    def wall_collision(self,xmin,xmax,ymin,ymax):
+        if (self.head.x == xmin or self.head.x == xmax or self.head.y == ymin or self.head.y == ymax):
+            return True
+        else:
+            return False
+
     def wall_check(self, max_size):
         '''
         checks if snake has hit wall \n
