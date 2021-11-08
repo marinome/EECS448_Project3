@@ -1,4 +1,5 @@
 import pygame
+import pygame_menu
 import string
 import sys
 import random
@@ -150,6 +151,56 @@ def gridScreen(gridSize, color1, color2):
                 pygame.draw.rect(screen, color2, grid, 0)
             count = count + 1
 
+def menu():
+    '''
+    Menu to start the game or quit
+    Author: Michael Talaga
+    :return: returns true if the game will start or false to quit.
+    '''
+    title = "Snake Game by Group 3"
+    titleFont = pygame.font.SysFont('times new roman', 30)
+    startFont = pygame.font.SysFont('times new roman', 20)
+    quitFont = pygame.font.SysFont('times new roman', 20)
+    choice = ""
+    
+    while(1):
+        pressed = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                return False
+            if pressed[pygame.K_RETURN]:
+                match choice:
+                    case "QUIT":
+                        return False
+                    case "START":
+                        return True
+                    case _:
+                        continue        
+            if pressed[pygame.K_DOWN]:
+                choice = "QUIT"
+            elif pressed[pygame.K_UP]:
+                choice = "START"
+        screen.fill(get_color("black"))
+        #Create and blit title to screen
+        titleRender = titleFont.render(title, False, get_color("green"))
+        screen.blit(titleRender, ((display_width / 6), (display_height / 5)))
+        match choice:
+            case "QUIT":
+                startRender = titleFont.render("START", False, get_color("white"))
+                quitRender = titleFont.render("QUIT", False, get_color("green"))
+            case "START":
+                startRender = titleFont.render("START", False, get_color("green"))
+                quitRender = titleFont.render("QUIT", False, get_color("white"))
+            case _:
+                quitRender = titleFont.render("QUIT", False, get_color("white"))
+                startRender = titleFont.render("START", False, get_color("white"))
+    
+        screen.blit(startRender, ((display_width / 3), (display_height / 2)))
+        screen.blit(quitRender, ((display_width / 3), (display_height / 1.5)))
+        pygame.display.update()
+        clock.tick(pace)
+
+
 
 def game():
     '''
@@ -158,6 +209,7 @@ def game():
 
     :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with arrow keys or wasd.
     :type snake: Snake, made of, Block
+    
     '''
     exit = False
     snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
@@ -193,8 +245,13 @@ def main():
     Author: Michael Talaga, AMA
 
     '''
-    game_over('times new roman', 50, "red", game())
-    pygame.quit()
+    finished = False
+    while not finished:
+        if (not menu()):
+            break
+        game_over('times new roman', 50, "red", game())
+   
+    pygame.quit() 
     sys.exit()
 
 req_version = (3,10)
