@@ -195,8 +195,8 @@ def chooseDifficulty(snake):
                 regRender = smallFont.render("REGULAR", False, get_color("white"))
                 hardRender = smallFont.render("HARD", False, get_color("white"))
 
-        screen.blit(hardRender, ((display_width / 2), (display_height / 3)))
-        screen.blit(regRender, ((display_width / 6), (display_height / 3)))
+        screen.blit(hardRender, ((display_width / 1.5), (display_height / 3)))
+        screen.blit(regRender, ((display_width / 4.5), (display_height / 3)))
         pygame.display.update()
         clock.tick(pace)
 
@@ -277,9 +277,9 @@ def game(snake):
         snake.render(screen)
         food.render(screen, get_color("red"))
         borderCollide = snake.wall_collision(25,390,25,390)
-        snake.update((display_width, display_height), food)
-        #borderCollide = snake.update((display_width, display_height), food) #commented this out to make changes for the collision to happen at border not window -MXO
-        if (borderCollide == True): #Border collision check
+        #snake.update((display_width, display_height), food)
+        bodyCollide = snake.update((display_width, display_height), food) #commented this out to make changes for the collision to happen at border not window -MXO
+        if (borderCollide == True or bodyCollide == True): #Border collision check
             # exit = True
             return snake.size
         # display score #MT Made snake size for now
@@ -294,18 +294,21 @@ def main():
 
     
     '''
-    snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
+    
 
     finished = False
     while not finished:
+        snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
         if (not menu()):
+            finished = True
             break
         #Choose game difficulty
         chooseDifficulty(snake)
         #Run game
         game_over('times new roman', 50, "red", game(snake))
     pygame.quit() 
-    sys.exit()
+    exit()
+    #sys.exit()
 
 req_version = (3,10)
 curr_version = sys.version_info
