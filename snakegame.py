@@ -10,6 +10,7 @@ from Block import Block
 from snake import Snake
 from Food import Food
 
+
 pygame.init()
 
 '''
@@ -151,6 +152,54 @@ def gridScreen(gridSize, color1, color2):
                 pygame.draw.rect(screen, color2, grid, 0)
             count = count + 1
 
+def chooseDifficulty(snake):
+    '''
+    Option after starting to select difficulty, changes things like game speed/speed over time
+    Author: Michael Talaga
+    '''
+
+    difficultyText = "Choose Difficulty"
+    font = pygame.font.SysFont('times new roman', 25)
+    smallFont = pygame.font.SysFont('times new roman', 20)
+    difficulty = ""
+    while(1):
+        pressed = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                return False
+            if pressed[pygame.K_RETURN]:
+                match difficulty:
+                    case "REGULAR":
+                        return
+                    case "HARD":
+                        snake.head.speed = 7
+                        return
+                    case _:
+                        continue        
+            if pressed[pygame.K_LEFT]:
+                difficulty = "REGULAR"
+            elif pressed[pygame.K_RIGHT]:
+                difficulty = "HARD"
+
+        screen.fill(get_color("black"))
+        difficultyRender = font.render(difficultyText, False, get_color("green"))
+        screen.blit(difficultyRender, ((display_width / 4), (display_height / 5)))
+        match difficulty:
+            case "REGULAR":
+                hardRender = smallFont.render("HARD", False, get_color("white"))
+                regRender = smallFont.render("REGULAR", False, get_color("green"))
+            case "HARD":
+                hardRender = smallFont.render("HARD", False, get_color("green"))
+                regRender = smallFont.render("REGULAR", False, get_color("white"))
+            case _:
+                regRender = smallFont.render("REGULAR", False, get_color("white"))
+                hardRender = smallFont.render("HARD", False, get_color("white"))
+
+        screen.blit(hardRender, ((display_width / 2), (display_height / 3)))
+        screen.blit(regRender, ((display_width / 6), (display_height / 3)))
+        pygame.display.update()
+        clock.tick(pace)
+
 def menu():
     '''
     Menu to start the game or quit
@@ -158,11 +207,10 @@ def menu():
     :return: returns true if the game will start or false to quit.
     '''
     title = "Snake Game by Group 3"
-    titleFont = pygame.font.SysFont('times new roman', 30)
-    startFont = pygame.font.SysFont('times new roman', 20)
-    quitFont = pygame.font.SysFont('times new roman', 20)
+    instruction = "Please use arrow keys to select"
+    font = pygame.font.SysFont('times new roman', 30)
+    smallFont = pygame.font.SysFont('times new roman', 20)
     choice = ""
-    
     while(1):
         pressed = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -182,37 +230,37 @@ def menu():
                 choice = "START"
         screen.fill(get_color("black"))
         #Create and blit title to screen
-        titleRender = titleFont.render(title, False, get_color("green"))
+        titleRender = font.render(title, False, get_color("green"))
         screen.blit(titleRender, ((display_width / 6), (display_height / 5)))
+        instructionRender = smallFont.render(instruction, False, get_color("white"))
+        screen.blit(instructionRender, ((display_width / 4.5), (display_height / 3)))
         match choice:
             case "QUIT":
-                startRender = titleFont.render("START", False, get_color("white"))
-                quitRender = titleFont.render("QUIT", False, get_color("green"))
+                startRender = smallFont.render("START", False, get_color("white"))
+                quitRender = smallFont.render("QUIT", False, get_color("green"))
             case "START":
-                startRender = titleFont.render("START", False, get_color("green"))
-                quitRender = titleFont.render("QUIT", False, get_color("white"))
+                startRender = smallFont.render("START", False, get_color("green"))
+                quitRender = smallFont.render("QUIT", False, get_color("white"))
             case _:
-                quitRender = titleFont.render("QUIT", False, get_color("white"))
-                startRender = titleFont.render("START", False, get_color("white"))
+                quitRender = smallFont.render("QUIT", False, get_color("white"))
+                startRender = smallFont.render("START", False, get_color("white"))
     
-        screen.blit(startRender, ((display_width / 3), (display_height / 2)))
-        screen.blit(quitRender, ((display_width / 3), (display_height / 1.5)))
+        screen.blit(startRender, ((display_width / 2.5), (display_height / 2)))
+        screen.blit(quitRender, ((display_width / 2.5), (display_height / 1.5)))
         pygame.display.update()
         clock.tick(pace)
 
 
-
-def game():
+def game(snake):
     '''
-    COMMENTS \n
+    Main game loop to play snake game
     Author: Michael Talaga
-
+    
     :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with arrow keys or wasd.
     :type snake: Snake, made of, Block
-    
     '''
     exit = False
-    snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
+    
     #random food placement
     food = Food(random.choice(range(1, display_width-10, 5)), random.choice(range(1, display_height-10, 5)))
 
@@ -244,13 +292,18 @@ def main():
     Main file to run the game and exit the system when it is finished. \n
     Author: Michael Talaga, AMA
 
+    
     '''
+    snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
+
     finished = False
     while not finished:
         if (not menu()):
             break
-        game_over('times new roman', 50, "red", game())
-   
+        #Choose game difficulty
+        chooseDifficulty(snake)
+        #Run game
+        game_over('times new roman', 50, "red", game(snake))
     pygame.quit() 
     sys.exit()
 

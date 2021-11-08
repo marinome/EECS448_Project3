@@ -43,6 +43,8 @@ class Snake(pygame.sprite.Sprite):
     :type blocks: sprite group from pygame's library which
     :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
     :type direction: String
+    :param increaseDifficulty: Determines whether or not snake increases speed
+    :type increaseDifficulty: String
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
