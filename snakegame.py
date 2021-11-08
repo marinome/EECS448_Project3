@@ -1,5 +1,5 @@
 import pygame
-import pygame_menu
+#import pygame_menu
 import string
 import sys
 import random
