@@ -81,6 +81,8 @@ def get_color(color_string):
             return (0,0,255)
         case "green":
             return (0,255,0)
+        case "darkGreen":
+            return (0,200,0)
         # default, some odd color
         case _:
             return (70,70,70)
@@ -181,15 +183,16 @@ def chooseDifficulty(snake):
             elif pressed[pygame.K_RIGHT]:
                 difficulty = "HARD"
 
-        screen.fill(get_color("black"))
-        difficultyRender = font.render(difficultyText, False, get_color("green"))
+        screen.fill(get_color("white"))
+        pygame.draw.rect(screen, get_color("darkGreen"), pygame.Rect(30, 30, (display_height - 60), display_width - 60))
+        difficultyRender = font.render(difficultyText, False, get_color("yellow"))
         screen.blit(difficultyRender, ((display_width / 4), (display_height / 5)))
         match difficulty:
             case "REGULAR":
                 hardRender = smallFont.render("HARD", False, get_color("white"))
-                regRender = smallFont.render("REGULAR", False, get_color("green"))
+                regRender = font.render("REGULAR", False, get_color("yellow"))
             case "HARD":
-                hardRender = smallFont.render("HARD", False, get_color("green"))
+                hardRender = font.render("HARD", False, get_color("yellow"))
                 regRender = smallFont.render("REGULAR", False, get_color("white"))
             case _:
                 regRender = smallFont.render("REGULAR", False, get_color("white"))
@@ -209,6 +212,7 @@ def menu():
     title = "Snake Game by Group 3"
     instruction = "Please use arrow keys to select"
     font = pygame.font.SysFont('times new roman', 30)
+    selectedFont = pygame.font.SysFont('times new roman', 25)
     smallFont = pygame.font.SysFont('times new roman', 20)
     choice = ""
     while(1):
@@ -228,18 +232,20 @@ def menu():
                 choice = "QUIT"
             elif pressed[pygame.K_UP]:
                 choice = "START"
-        screen.fill(get_color("black"))
+        screen.fill(get_color("white"))
+        pygame.draw.rect(screen, get_color("darkGreen"), pygame.Rect(30, 30, (display_height - 60), display_width - 60))
+      
         #Create and blit title to screen
-        titleRender = font.render(title, False, get_color("green"))
+        titleRender = font.render(title, False, get_color("yellow"))
         screen.blit(titleRender, ((display_width / 6), (display_height / 5)))
         instructionRender = smallFont.render(instruction, False, get_color("white"))
         screen.blit(instructionRender, ((display_width / 4.5), (display_height / 3)))
         match choice:
             case "QUIT":
                 startRender = smallFont.render("START", False, get_color("white"))
-                quitRender = smallFont.render("QUIT", False, get_color("green"))
+                quitRender = selectedFont.render("QUIT", False, get_color("yellow"))
             case "START":
-                startRender = smallFont.render("START", False, get_color("green"))
+                startRender = selectedFont.render("START", False, get_color("yellow"))
                 quitRender = smallFont.render("QUIT", False, get_color("white"))
             case _:
                 quitRender = smallFont.render("QUIT", False, get_color("white"))
@@ -273,7 +279,7 @@ def game(snake):
         #should we make border so it's easier to know when you're about to lose? -MEM 
         # border added -MXO
         #need to fix food spawn so they are within the border -MXO
-        gridScreen(15, (0,255,0), (0,200,0))
+        gridScreen(15, get_color("green"), get_color("darkGreen"))
         snake.render(screen)
         food.render(screen, get_color("red"))
         borderCollide = snake.wall_collision(25,390,25,390)
