@@ -137,7 +137,7 @@ class Snake(pygame.sprite.Sprite):
 		#check for snake body collision
         for block in self.blocks:
             if(block.id not in range (2, 8)):
-                if (self.did_eat_block((block.x,block.y), int((block.width / 2))) == True):
+                if (self.did_eat_block((block.x,block.y), float((block.width / 2))) == True):
                     return True
         #collision check with food
         if (self.did_eat_block((food.x,food.y), food.width) == True):
@@ -164,7 +164,7 @@ class Snake(pygame.sprite.Sprite):
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
 
     def wall_collision(self,xmin,xmax,ymin,ymax):
-        if (self.head.x == xmin or self.head.x == xmax or self.head.y == ymin or self.head.y == ymax):
+        if (self.head.x <= xmin or self.head.x >= xmax or self.head.y <= ymin or self.head.y >= ymax):
             return True
         else:
             return False
@@ -216,8 +216,8 @@ class Snake(pygame.sprite.Sprite):
         # troubleshooting
         print(copy_body[0].x, copy_body[0].y)
         #check for overlap of head and tail
-        mid = int(sideLength * 0.8)
-        if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + sideLength)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + sideLength)))):
+        mid = int(sideLength)
+        if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + mid)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid)))):
             return True
 
 
