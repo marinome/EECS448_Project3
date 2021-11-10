@@ -284,7 +284,7 @@ def game(snake):
         food.render(screen, get_color("red"))
         borderCollide = snake.wall_collision(25,390,25,390)
         #snake.update((display_width, display_height), food)
-        bodyCollide = snake.update((display_width, display_height), food) #commented this out to make changes for the collision to happen at border not window -MXO
+        bodyCollide = snake.update((display_width, display_height), food)
         if (borderCollide == True or bodyCollide == True): #Border collision check
             # exit = True
             return snake.size
