@@ -220,23 +220,3 @@ class Snake(pygame.sprite.Sprite):
         mid = int(sideLength)
         if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + mid)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid)))):
             return True
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
