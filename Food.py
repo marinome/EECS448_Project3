@@ -37,8 +37,8 @@ class Food(pygame.sprite.Sprite):
         self.id = 1000 #block number
         self.x = x
         self.y = y
-        self.width = 10
-        self.height = 10
+        self.width = 25
+        self.height = 25
 
     def changePosition(self, screenDimensions):
         '''
@@ -48,8 +48,10 @@ class Food(pygame.sprite.Sprite):
         :param screenDimensions: dimensions for the screen
         :type screenDimensions: tuple as (x, y) for (width, height)
         '''
-        self.x = random.randrange(5, screenDimensions[0]-10)
-        self.y = random.randrange(5, screenDimensions[1]-10)
+        #self.x = random.randrange(5, screenDimensions[0]-10)
+        #self.y = random.randrange(5, screenDimensions[1]-10)
+        self.x = random.choice(range(25, screenDimensions[0]-25, 25))
+        self.y = random.choice(range(25, screenDimensions[1]-25, 25))
 
     #def update(self, screenDimensions):
 
@@ -67,6 +69,8 @@ class Food(pygame.sprite.Sprite):
             pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
             #pygame.draw.circle(screen, color, (self.x, self.y), 10,0) #Circle for food might look better than square. -MXO
         else:
-            self.x = random.randrange(30, 390) #can change to not hard coded values later, but this allows food to spawn in border -MXO
-            self.y = random.randrange(30, 390) #can change to not hard coded values later, but this allows food to spawn in border -MXO
+            self.x = random.choice(range(25, 400, 25))
+            self.y = random.choice(range(25, 400, 25))
+            #self.x = random.randrange(30, 390) #can change to not hard coded values later, but this allows food to spawn in border -MXO
+            #self.y = random.randrange(30, 390) #can change to not hard coded values later, but this allows food to spawn in border -MXO
             self.render(screen,color)
