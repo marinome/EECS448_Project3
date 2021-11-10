@@ -268,7 +268,7 @@ def game(snake):
     exit = False
     
     #random food placement
-    food = Food(random.choice(range(1, display_width-10, 5)), random.choice(range(1, display_height-10, 5)))
+    food = Food(random.choice(range(25, display_width-25, 25)), random.choice(range(25, display_height-25, 25)))
 
     while not exit:
         for event in pygame.event.get():
