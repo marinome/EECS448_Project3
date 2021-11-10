@@ -279,7 +279,7 @@ def game(snake):
         #should we make border so it's easier to know when you're about to lose? -MEM 
         # border added -MXO
         #need to fix food spawn so they are within the border -MXO
-        gridScreen(15, get_color("green"), get_color("darkGreen"))
+        gridScreen(25, get_color("green"), get_color("darkGreen"))
         snake.render(screen)
         food.render(screen, get_color("red"))
         borderCollide = snake.wall_collision(25,390,25,390)
