@@ -282,7 +282,7 @@ def game(snake):
         gridScreen(25, get_color("green"), get_color("darkGreen"))
         snake.render(screen)
         food.render(screen, get_color("red"))
-        borderCollide = snake.wall_collision(25,390,25,390)
+        borderCollide = snake.wall_collision(20,380,20,380)
         #snake.update((display_width, display_height), food)
         bodyCollide = snake.update((display_width, display_height), food)
         if (borderCollide == True or bodyCollide == True): #Border collision check
