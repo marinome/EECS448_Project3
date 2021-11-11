@@ -82,25 +82,27 @@ class Snake(pygame.sprite.Sprite):
         y_change = 0
         x_change = 0
 
-        #arrow key movement
-        if pressed[pygame.K_UP] and self.direction != "DOWN":
-            self.direction = "UP"
-        elif pressed[pygame.K_DOWN] and self.direction != "UP":
-            self.direction = "DOWN"
-        if pressed[pygame.K_LEFT] and self.direction != "RIGHT":
-            self.direction = "LEFT"
-        elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
-            self.direction = "RIGHT"
+        
+        if (self.head.x % 25 == 0 and self.head.y % 25 == 0):
+            #arrow key movement
+            if pressed[pygame.K_UP] and self.direction != "DOWN":
+                self.direction = "UP"
+            elif pressed[pygame.K_DOWN] and self.direction != "UP":
+                self.direction = "DOWN"
+            if pressed[pygame.K_LEFT] and self.direction != "RIGHT":
+                self.direction = "LEFT"
+            elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
+                self.direction = "RIGHT"
 
-        #added "wasd" movement -MXO
-        if pressed[pygame.K_w] and self.direction != "DOWN":
-            self.direction = "UP"
-        elif pressed[pygame.K_s] and self.direction != "UP":
-            self.direction = "DOWN"
-        if pressed[pygame.K_a] and self.direction != "RIGHT":
-            self.direction = "LEFT"
-        elif pressed[pygame.K_d] and self.direction != "LEFT":
-            self.direction = "RIGHT"
+            #added "wasd" movement -MXO
+            if pressed[pygame.K_w] and self.direction != "DOWN":
+                self.direction = "UP"
+            elif pressed[pygame.K_s] and self.direction != "UP":
+                self.direction = "DOWN"
+            if pressed[pygame.K_a] and self.direction != "RIGHT":
+                self.direction = "LEFT"
+            elif pressed[pygame.K_d] and self.direction != "LEFT":
+                self.direction = "RIGHT"
 
         # changed to pattern matching -AMA
         match self.direction:
@@ -131,6 +133,7 @@ class Snake(pygame.sprite.Sprite):
 			#Make change to head
             self.head.x += x_change
             self.head.y += y_change
+
             #if self.head.y < 50: #tail add test
                 #self.add_tail(1)
             if (self.wall_check(screenDimensions)): #check for collision
