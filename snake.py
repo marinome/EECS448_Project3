@@ -82,7 +82,7 @@ class Snake(pygame.sprite.Sprite):
         y_change = 0
         x_change = 0
 
-        
+        #this if statement only allows movement change during a multiple of 25 so it alligns with the grid, it acts a little weird, will need to adjust -MXO
         if (self.head.x % 25 == 0 and self.head.y % 25 == 0):
             #arrow key movement
             if pressed[pygame.K_UP] and self.direction != "DOWN":
