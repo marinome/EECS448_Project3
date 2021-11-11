@@ -40,5 +40,5 @@ class Block(pygame.sprite.Sprite):
         self.x = x
         self.y = y
         self.speed = 5
-        self.width = 10
-        self.height = 10
+        self.width = 25
+        self.height = 25
