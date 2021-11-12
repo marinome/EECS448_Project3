@@ -44,3 +44,9 @@ The object of the game is to make your snake fill up the entire playing board. Y
 - See README.html
 * https://www.kosbie.net/cmu/fall-10/15-110/handouts/snake/snake.html for help with Pygame
 * https://www.edureka.co/blog/snake-game-with-pygame/ for help with mouse-click response
+- Sources Referenced in deployment_plan.txt
+* https://stephcorrigan.com/logo-variations/
+* https://towardsdatascience.com/convert-your-python-code-into-a-windows-application-exe-file-28aa5daf2564
+* https://www.informit.com/articles/article.aspx?p=2170654&seqNum=6
+* https://mlsdev.com/blog/how-do-free-apps-make-money
+* https://www.websitebuilderexpert.com/building-websites/domain-name-cost/#:~:text=Buying%20a%20new%20domain%20generally,of%20domain%20you're%20buying.
