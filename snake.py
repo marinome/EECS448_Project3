@@ -148,7 +148,7 @@ class Snake(pygame.sprite.Sprite):
                 if (self.did_eat_block((block.x,block.y), float((block.width / 2))) == True):
                     return True
         #collision check with food
-        if (self.did_eat_block((food.x,food.y), food.width) == True):
+        if (self.did_eat_block((food.x,food.y), float((food.width / 2))) == True):
             food.changePosition(screenDimensions)
             self.add_tail(1)
 
