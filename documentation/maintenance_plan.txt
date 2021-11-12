@@ -6,5 +6,7 @@ by: Morgan Marino
 description: "How much will it cost to maintain your product for the next year?" -Project 4.pdf
 '''
 Maintenance Plan:
-        #ideas: costs for hiring developers, monthly or annual fees for platforms, servers, domains
+	        
+
+#ideas: costs for hiring developers, monthly or annual fees for platforms, servers, domains
 	#500-700 words
