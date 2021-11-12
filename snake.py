@@ -167,12 +167,10 @@ class Snake(pygame.sprite.Sprite):
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
         #not sure if it's this function, but the rectangles are making it so that the snake head and food don't match up -MEM
         head = self.head
-        #pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
-        #pygame.draw.rect(screen, black, (head.x, head.y, head.width, head.height),2)
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
             pygame.draw.rect(screen, black, (block.x, block.y, block.width, block.height),2)
-            #pygame.draw.rect(screen, white, (head.x, head.y, block.width, block.height))
+
         pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
         pygame.draw.rect(screen, black, (head.x, head.y, head.width, head.height),2)
 
