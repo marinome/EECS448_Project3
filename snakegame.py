@@ -172,10 +172,9 @@ def chooseDifficulty(snake):
             if pressed[pygame.K_RETURN]:
                 match difficulty:
                     case "REGULAR":
-                        return
+                        return "REGULAR"
                     case "HARD":
-                        snake.head.speed = 7
-                        return
+                        return "HARD"
                     case _:
                         continue        
             if pressed[pygame.K_LEFT]:
@@ -257,7 +256,7 @@ def menu():
         clock.tick(pace)
 
 
-def game(snake):
+def game(snake, difficulty):
     '''
     Main game loop to play snake game
     Author: Michael Talaga
@@ -279,7 +278,10 @@ def game(snake):
         #should we make border so it's easier to know when you're about to lose? -MEM 
         # border added -MXO
         #need to fix food spawn so they are within the border -MXO
-        gridScreen(25, get_color("green"), get_color("darkGreen"))
+        if difficulty == "REGULAR":
+            gridScreen(25, get_color("green"), get_color("darkGreen"))
+        elif (difficulty == "HARD"):
+            gridScreen(25, get_color("green"), get_color("green"))
         snake.render(screen)
         food.render(screen, get_color("red"), Block,snake)
         borderCollide = snake.wall_collision(20,380,20,380)
@@ -309,9 +311,9 @@ def main():
             finished = True
             break
         #Choose game difficulty
-        chooseDifficulty(snake)
+        difficulty = chooseDifficulty(snake)
         #Run game
-        game_over('times new roman', 50, "red", game(snake))
+        game_over('times new roman', 50, "red", game(snake, difficulty))
     pygame.quit() 
     exit()
     #sys.exit()
