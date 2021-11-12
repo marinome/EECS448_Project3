@@ -6,5 +6,40 @@ by: Morgan Marino
 description: "What are the steps required to deploy your project? Who is the potential market? What will it cost to deploy it?" -Project 4.pdf
 '''
 Deployment Plan:
-        #idea: App Store costs, costs to get your game on Xbox, costs to print disks, costs to buy domains, cost to attend conventions and conferences
-	#500-700 words
+	After conducting a lot of research on the best way to go about deploying a new application, here's the steps we have come up with:
+	1. Create a Desktop client for our app.
+		- Instead of running in terminal, you can click on the icon in your folder navigation OR right on your desktop, and the Snake Game will automatically open
+		- Usually involves a script, a .csv file, an installation extension, and eventually, a .exe file for Python (source: towards data science)
+	2. Design a logo.
+		- Luckily, one of our team members has some graphic design skills, so an icon and logo will come at no extra cost.
+		- According to the Steph Corrigan website, brands need about 4 logo variations, as listed below: (source: Steph Corrigan)
+			1. Primary logo: Our most detailed logo with the full name that is used on our website, extraneous files, and (depending on the size) watermark
+			2. Wide/horizontal logo: Mainly used in emails, social media, and stationary
+			3. Submark: A circular or square-shaped version of the primary logo, that can be used for profile pictures or any other small symmetrical area
+			4. Favicon: Either initials or a simple symbol that will most likely be the variation used for the desktop icon
+	3. Publish to Windows Store
+		- Register, submit a new app, go through certification process
+		- Extra costs may incur if there is an issue with certification process and code needs to be revised, tested (will depend on person-hours and rate)
+		- $99 cost for a company account
+		- Determine charge: Right now, we aren't getting paid anything, so we'd need to make up at least $99 to get in the green. There are a few options to complete this: (source: informIT)
+			- Charge between $1.49 and $999.99 (the upper and lower limits of Windows apps)
+				- ex: if we charged $1.49, we'd need to sell 67 apps to come out even
+			- Make app free with video ads between runs
+				- ex: According to MLSDev, videos create minimum $5 per ad. If there were 1 ad every 3 runs, the game would need to run 60 times total for us to generate $99 (source: MLSDev)
+			- Have in-app purchases
+				- ex: if we charged $0.50 to unlock difficulty settings, two-player, etc., we'd need to sell 198 additions
+			- Give customers a 30 day free trial, and then encourage them to "pay-to-play" at a monthly rate
+				- ex: if we charged $0.75 a month after the first 30 days, 1 paying customer would break us even at 133 months, 2 at 67 months, 3 at 45 months, etc.
+			-Note: We need to determine our demand for the app and additions to the simple game before we can decide which of these options would help us turn a profit the fastest. Our current vote is for video ads with the assumption we find and sign a contract with a company very quickly after deployment.
+	4. Market, market, market!
+		- Windows conferences: Mostly free
+		- Variable costs depending on if we want to provide ads for another app (between $0.10 and $10.00 per ad)
+		- Python conferences: Mostly free
+		- Option to hire a publisher to market for us
+	5. Other possible costs to note
+		- More employees (undetermined; for now, they work for high fives)
+		- Cost to translate to IOS and put on Apple App Store ($99/year for membership and would lose some profit to Apple for any purchases through Apple)
+		- Cost to develop more versions, additions, and modernizations (see maintenance plan)
+		- Website domain name ($10-$20 a year) (source: Website Builder Expert)
+	
+	tldr: We need an .exe file, a quick $99 profit, a lot of smart decisions on our part to create an application that puts the 'fun' in 'functional'!
