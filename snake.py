@@ -123,15 +123,16 @@ class Snake(pygame.sprite.Sprite):
 
 		#Function to update each block's location and adhere to snake movement rules
         if change and len(self.blocks) > 0:
-            prevx = self.head.x
-            prevy = self.head.y
-            for block in self.blocks:
-                currentx = block.x
-                currenty = block.y
-                block.x = prevx
-                block.y = prevy
-                prevx = currentx
-                prevy = currenty
+            if(self.head.x % 25 == 0 and self.head.y % 25 == 0):
+                prevx = self.head.x
+                prevy = self.head.y
+                for block in self.blocks:
+                    currentx = block.x
+                    currenty = block.y
+                    block.x = prevx
+                    block.y = prevy
+                    prevx = currentx
+                    prevy = currenty
 
 			#Make change to head
             self.head.x += x_change
@@ -166,9 +167,14 @@ class Snake(pygame.sprite.Sprite):
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
         #not sure if it's this function, but the rectangles are making it so that the snake head and food don't match up -MEM
         head = self.head
-        pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
+        #pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
+        #pygame.draw.rect(screen, black, (head.x, head.y, head.width, head.height),2)
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
+            pygame.draw.rect(screen, black, (block.x, block.y, block.width, block.height),2)
+            #pygame.draw.rect(screen, white, (head.x, head.y, block.width, block.height))
+        pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
+        pygame.draw.rect(screen, black, (head.x, head.y, head.width, head.height),2)
 
     def wall_collision(self,xmin,xmax,ymin,ymax):
         if (self.head.x <= xmin or self.head.x >= xmax or self.head.y <= ymin or self.head.y >= ymax):
