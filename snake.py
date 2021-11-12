@@ -51,10 +51,11 @@ class Snake(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.size = 2
         self.head = Block(1, 200, 200)
-        self.tail = Block(2, 200, 210) #reassigned later
+        self.tail = Block(2, 200, 225) #reassigned later
         self.blocks = pygame.sprite.Group() #create group of blocks
         self.blocks.add(self.tail)
         self.direction = "NULL" #setting direction snke will move in
+        self.nextDirection = "NULL"
 
 
     def update(self, screenDimensions, food):
@@ -83,28 +84,30 @@ class Snake(pygame.sprite.Sprite):
         x_change = 0
 
         #this if statement only allows movement change during a multiple of 25 so it alligns with the grid, it acts a little weird, will need to adjust -MXO
-        if (self.head.x % 25 == 0 and self.head.y % 25 == 0):
+        
             #arrow key movement
-            if pressed[pygame.K_UP] and self.direction != "DOWN":
-                self.direction = "UP"
-            elif pressed[pygame.K_DOWN] and self.direction != "UP":
-                self.direction = "DOWN"
-            if pressed[pygame.K_LEFT] and self.direction != "RIGHT":
-                self.direction = "LEFT"
-            elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
-                self.direction = "RIGHT"
+        if pressed[pygame.K_UP] and self.direction != "DOWN":
+            self.nextDirection = "UP"
+        elif pressed[pygame.K_DOWN] and self.direction != "UP":
+            self.nextDirection = "DOWN"
+        if pressed[pygame.K_LEFT] and self.direction != "RIGHT":
+            self.nextDirection = "LEFT"
+        elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
+            self.nextDirection = "RIGHT"
 
             #added "wasd" movement -MXO
-            if pressed[pygame.K_w] and self.direction != "DOWN":
-                self.direction = "UP"
-            elif pressed[pygame.K_s] and self.direction != "UP":
-                self.direction = "DOWN"
-            if pressed[pygame.K_a] and self.direction != "RIGHT":
-                self.direction = "LEFT"
-            elif pressed[pygame.K_d] and self.direction != "LEFT":
-                self.direction = "RIGHT"
+        if pressed[pygame.K_w] and self.direction != "DOWN":
+            self.direction = "UP"
+        elif pressed[pygame.K_s] and self.direction != "UP":
+            self.direction = "DOWN"
+        if pressed[pygame.K_a] and self.direction != "RIGHT":
+            self.direction = "LEFT"
+        elif pressed[pygame.K_d] and self.direction != "LEFT":
+            self.direction = "RIGHT"
 
         # changed to pattern matching -AMA
+        if (self.head.x % 25 == 0 and self.head.y % 25 == 0):
+            self.direction = self.nextDirection
         match self.direction:
             case "UP":
                 y_change -= self.head.speed
@@ -114,7 +117,7 @@ class Snake(pygame.sprite.Sprite):
                 x_change -= self.head.speed
             case "RIGHT":
                 x_change += self.head.speed
-            # default
+                # default
             case _:
                 change = False
 
