@@ -95,13 +95,13 @@ class Snake(pygame.sprite.Sprite):
 
         #added "wasd" movement -MXO
         if pressed[pygame.K_w] and self.direction != "DOWN":
-            self.direction = "UP"
+            self.nextDirection = "UP"
         elif pressed[pygame.K_s] and self.direction != "UP":
-            self.direction = "DOWN"
+            self.nextDirection = "DOWN"
         if pressed[pygame.K_a] and self.direction != "RIGHT":
-            self.direction = "LEFT"
+            self.nextDirection = "LEFT"
         elif pressed[pygame.K_d] and self.direction != "LEFT":
-            self.direction = "RIGHT"
+            self.nextDirection = "RIGHT"
 
         # changed to pattern matching -AMA
         #this if statement only allows movement change during a multiple of 25 so it alligns with the grid
