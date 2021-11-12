@@ -82,10 +82,8 @@ class Snake(pygame.sprite.Sprite):
         change = True
         y_change = 0
         x_change = 0
-
-        #this if statement only allows movement change during a multiple of 25 so it alligns with the grid, it acts a little weird, will need to adjust -MXO
         
-            #arrow key movement
+        #arrow key movement
         if pressed[pygame.K_UP] and self.direction != "DOWN":
             self.nextDirection = "UP"
         elif pressed[pygame.K_DOWN] and self.direction != "UP":
@@ -95,7 +93,7 @@ class Snake(pygame.sprite.Sprite):
         elif pressed[pygame.K_RIGHT] and self.direction != "LEFT":
             self.nextDirection = "RIGHT"
 
-            #added "wasd" movement -MXO
+        #added "wasd" movement -MXO
         if pressed[pygame.K_w] and self.direction != "DOWN":
             self.direction = "UP"
         elif pressed[pygame.K_s] and self.direction != "UP":
@@ -106,6 +104,7 @@ class Snake(pygame.sprite.Sprite):
             self.direction = "RIGHT"
 
         # changed to pattern matching -AMA
+        #this if statement only allows movement change during a multiple of 25 so it alligns with the grid
         if (self.head.x % 25 == 0 and self.head.y % 25 == 0):
             self.direction = self.nextDirection
         match self.direction:
@@ -165,7 +164,6 @@ class Snake(pygame.sprite.Sprite):
 		#for each in blocks
 		#snakeBlocks.draw(screen)
 		#pygame.draw.rect(screen, white, (self.x, self.y, self.width, self.height))
-        #not sure if it's this function, but the rectangles are making it so that the snake head and food don't match up -MEM
         head = self.head
         for block in self.blocks:
             pygame.draw.rect(screen, white, (block.x, block.y, block.width, block.height))
