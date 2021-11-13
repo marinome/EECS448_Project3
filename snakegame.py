@@ -16,7 +16,7 @@ pygame.init()
 '''
 Main file
 date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA
+by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
@@ -67,7 +67,7 @@ def get_color(color_string):
     #used to be (red,green,blue) -MEM
     @MEM -> the tuple that is returned, the color, is defined by the amount of red, green and blue, hence the RGB
     '''
-    # @MEM lets not delete code, just add another case, this is a generic func 
+    # @MEM lets not delete code, just add another case, this is a generic func
     match color_string:
         case "red":
             return (255,0,0)
@@ -176,7 +176,7 @@ def chooseDifficulty(snake):
                     case "HARD":
                         return "HARD"
                     case _:
-                        continue        
+                        continue
             if pressed[pygame.K_LEFT]:
                 difficulty = "REGULAR"
             elif pressed[pygame.K_RIGHT]:
@@ -226,14 +226,14 @@ def menu():
                     case "START":
                         return True
                     case _:
-                        continue        
+                        continue
             if pressed[pygame.K_DOWN]:
                 choice = "QUIT"
             elif pressed[pygame.K_UP]:
                 choice = "START"
         screen.fill(get_color("white"))
         pygame.draw.rect(screen, get_color("darkGreen"), pygame.Rect(30, 30, (display_height - 60), display_width - 60))
-      
+
         #Create and blit title to screen
         titleRender = font.render(title, False, get_color("yellow"))
         screen.blit(titleRender, ((display_width / 6), (display_height / 5)))
@@ -249,7 +249,7 @@ def menu():
             case _:
                 quitRender = smallFont.render("QUIT", False, get_color("white"))
                 startRender = smallFont.render("START", False, get_color("white"))
-    
+
         screen.blit(startRender, ((display_width / 2.5), (display_height / 2)))
         screen.blit(quitRender, ((display_width / 2.5), (display_height / 1.5)))
         pygame.display.update()
@@ -260,22 +260,35 @@ def game(snake, difficulty):
     '''
     Main game loop to play snake game
     Author: Michael Talaga
-    
+
     :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with arrow keys or wasd.
     :type snake: Snake, made of, Block
     '''
     exit = False
-    
+
     #random food placement
-    food = Food(random.choice(range(25, display_width-25, 25)), random.choice(range(25, display_height-25, 25)))
+    bonus = 0
+    xys = []
+    foods = []
+    for i in range(2):
+        x = random.choice(range(25, display_width-25, 25))
+        y = random.choice(range(25, display_width-25, 25))
+        while (x, y) in xys:
+            x = random.choice(range(25, display_width-25, 25))
+            y = random.choice(range(25, display_width-25, 25))
+        if i == 1:
+            foods.append(Food(x, y, True))
+        else:
+            foods.append(Food(x, y, False))
+        xys.append((x, y))
 
     while not exit:
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 # exit = True
                 return snake.size
-        screen.fill((0,100,0))
-        #should we make border so it's easier to know when you're about to lose? -MEM 
+        screen.fill((0, 100, 0))
+        #should we make border so it's easier to know when you're about to lose? -MEM
         # border added -MXO
         #need to fix food spawn so they are within the border -MXO
         if difficulty == "REGULAR":
@@ -283,15 +296,16 @@ def game(snake, difficulty):
         elif (difficulty == "HARD"):
             gridScreen(25, get_color("green"), get_color("green"))
         snake.render(screen)
-        food.render(screen, get_color("red"), Block,snake)
+        for food in foods[:1+bonus]:
+            food.render(screen, get_color("red"), Block, snake)
         borderCollide = snake.wall_collision(20,380,20,380)
         #snake.update((display_width, display_height), food)
-        bodyCollide = snake.update((display_width, display_height), food)
+        bodyCollide, bonus = snake.update((display_width, display_height), foods, bonus)
         if (borderCollide == True or bodyCollide == True): #Border collision check
             # exit = True
-            return snake.size
+            return snake.size - 2
         # display score #MT Made snake size for now
-        show_score(snake.size, get_color("yellow"), 'times new roman', 20)
+        show_score(snake.size - 2, get_color("yellow"), 'times new roman', 20)
         pygame.display.update()
         clock.tick(pace)
 
@@ -300,9 +314,9 @@ def main():
     Main file to run the game and exit the system when it is finished. \n
     Author: Michael Talaga, AMA
 
-    
+
     '''
-    
+
 
     finished = False
     while not finished:
@@ -314,7 +328,7 @@ def main():
         difficulty = chooseDifficulty(snake)
         #Run game
         game_over('times new roman', 50, "red", game(snake, difficulty))
-    pygame.quit() 
+    pygame.quit()
     exit()
     #sys.exit()
 

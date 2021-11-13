@@ -10,7 +10,7 @@ pygame.init()
 '''
 Food.py
 date: oct 29 2021
-by: Morgan Marino, Michael Talaga, AMA
+by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
 
@@ -33,15 +33,22 @@ class Food(pygame.sprite.Sprite):
     :param height: food height
     :type height: int
     '''
-    def __init__(self, x, y):
+    def __init__(self, x, y, gold):
         pygame.sprite.Sprite.__init__(self)
         self.id = 1000 #block number
         self.x = x
         self.y = y
         self.width = 25
         self.height = 25
+        if gold:
+            self.apple_img = pygame.image.load('gold.png').convert_alpha()
+        else:
+            self.apple_img = pygame.image.load('red.png').convert_alpha()
 
-    def changePosition(self, screenDimensions):
+    def getPosition(self):
+        return self.x, self.y
+
+    def changePosition(self, screenDimensions, foods):
         '''
         Change the position of food upon collision with snake head, ensure it is at snake head
         Author: Michael Talaga
@@ -51,9 +58,17 @@ class Food(pygame.sprite.Sprite):
         '''
         #self.x = random.randrange(5, screenDimensions[0]-10)
         #self.y = random.randrange(5, screenDimensions[1]-10)
-        self.x = random.choice(range(25, screenDimensions[0]-25, 25))
-        self.y = random.choice(range(25, screenDimensions[1]-25, 25))
-
+        xys = []
+        for food in foods:
+            x, y = food.getPosition()
+            xys.append((x, y))
+        x = random.choice(range(25, screenDimensions[0]-25, 25))
+        y = random.choice(range(25, screenDimensions[0]-25, 25))
+        while (x, y) in xys:
+            x = random.choice(range(25, screenDimensions[0]-25, 25))
+            y = random.choice(range(25, screenDimensions[0]-25, 25))
+        self.x = x
+        self.y = y
     #def update(self, screenDimensions):
 
     def render(self, screen, color, Block,snake):
@@ -66,8 +81,8 @@ class Food(pygame.sprite.Sprite):
         :param color: color of the food
         :type color: String
         '''
-        if (self.x > 30 and self.x < 395 and self.y > 30 and self.y < 395 and self.x != Block and self.y != Block and self.x != snake and self.y != snake):
-            pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
+        if (self.x > 30 and self.x < 395 and self.y > 30 and self.y < 395 and self.x and self.x != Block and self.y != Block and self.x != snake and self.y != snake):
+            screen.blit(self.apple_img, (self.x, self.y, self.width, self.height))
             #pygame.draw.circle(screen, color, (self.x, self.y), 10,0) #Circle for food might look better than square. -MXO
         else:
             self.x = random.choice(range(25, 400, 25))

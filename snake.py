@@ -19,7 +19,7 @@ blue = (0,0,255)
 '''
 snake.py
 date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA
+by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
 
@@ -58,7 +58,7 @@ class Snake(pygame.sprite.Sprite):
         self.nextDirection = "NULL"
 
 
-    def update(self, screenDimensions, food):
+    def update(self, screenDimensions, foods, bonus):
         '''
         Update movement of snake object via keyboard pressing. \n
         Author: Michael Talaga
@@ -82,7 +82,7 @@ class Snake(pygame.sprite.Sprite):
         change = True
         y_change = 0
         x_change = 0
-        
+
         #arrow key movement
         if pressed[pygame.K_UP] and self.direction != "DOWN":
             self.nextDirection = "UP"
@@ -140,16 +140,22 @@ class Snake(pygame.sprite.Sprite):
             #if self.head.y < 50: #tail add test
                 #self.add_tail(1)
             if (self.wall_check(screenDimensions)): #check for collision
-                return True
+                return True, bonus
 		#check for snake body collision
         for block in self.blocks:
             if(block.id not in range (2, 8)):
-                if (self.did_eat_block((block.x,block.y), float((block.width / 2))) == True):
-                    return True
+                if (self.did_eat_block((block.x, block.y), float((block.width / 2))) == True):
+                    return True, bonus
         #collision check with food
-        if (self.did_eat_block((food.x,food.y), float((food.width / 2))) == True):
-            food.changePosition(screenDimensions)
-            self.add_tail(1)
+        for i in range(1+bonus):
+            if (self.did_eat_block((foods[i].x, foods[i].y), foods[i].width / 2) == True):
+                foods[i].changePosition(screenDimensions, foods)
+                self.add_tail(1)
+                if i == 0 and bonus == 0:
+                    bonus = random.randint(0, 3) > 1
+                elif bonus and i == bonus:
+                    bonus = 0
+        return False, bonus
 
     def render(self, screen):
         '''
