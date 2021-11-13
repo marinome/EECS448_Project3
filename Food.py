@@ -66,7 +66,7 @@ class Food(pygame.sprite.Sprite):
         :param color: color of the food
         :type color: String
         '''
-        if (self.x > 30 and self.x < 395 and self.y > 30 and self.y < 395 and self.x and self.x != Block and self.y != Block and self.x != snake and self.y != snake):
+        if (self.x > 30 and self.x < 395 and self.y > 30 and self.y < 395 and self.x != Block and self.y != Block and self.x != snake and self.y != snake):
             pygame.draw.rect(screen, color, (self.x, self.y, self.width, self.height))
             #pygame.draw.circle(screen, color, (self.x, self.y), 10,0) #Circle for food might look better than square. -MXO
         else:
