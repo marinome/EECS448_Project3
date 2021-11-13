@@ -41,9 +41,9 @@ class Food(pygame.sprite.Sprite):
         self.width = 25
         self.height = 25
         if gold:
-            self.apple_img = pygame.image.load('gold.png').convert_alpha()
+            self.apple_img = pygame.image.load('goldApple.png').convert_alpha()
         else:
-            self.apple_img = pygame.image.load('red.png').convert_alpha()
+            self.apple_img = pygame.image.load('redApple.png').convert_alpha()
 
     def getPosition(self):
         return self.x, self.y
