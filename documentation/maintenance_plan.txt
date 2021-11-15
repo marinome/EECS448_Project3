@@ -2,7 +2,7 @@
 maintenance_plan.txt
 
 created: Oct 2021
-by: Morgan Marino
+by: Morgan Marino, Michael Talaga
 description: "How much will it cost to maintain your product for the next year?" -Project 4.pdf
 '''
 Maintenance Plan:
@@ -10,3 +10,25 @@ Maintenance Plan:
 
 #ideas: costs for hiring developers, monthly or annual fees for platforms, servers, domains
 	#500-700 words
+Hiring Developers:
+According to ZipRecruiter, a game developer makes roughly $70,000 annually in the state of Kansas. On top of this, there would be expectations for the company to contribute to their benefits plan, which could be up to 50% of their cost of benefits. 
+The Bureau of Labor Statistics reports that an employer may pay up to an additional $10-$12 an hour for an employee’s benefits. This could add an additional $20,000 per year, 
+so it can be assumed a new developer would cost at least $90,000 per year. If even more growth was anticipated, we would need to consider hiring several other roles to keep up with the growing pains of a business.
+Another factor that would need to be considered in hiring is recruiting. It can be difficult to find talented programmers without the help of a recruiter or network site like LinkedIn. A recruiting agency could be useful in helping a smaller, unknown company get off the ground, but they would charge a premium of 10-20% of the employee’s salary, and in this case, it would be $9,000 - $18,000 per employee. 
+LinkedIn would also be used as it comes at no cost to post jobs on that platform.
+
+Website Maintenance
+A website domain costs roughly $10-$20 according to “Website Builder Expert”. A company website would either be hosted on the cloud or from a dedicated server. A cloud based solution like AWS would be able to scale as our business grows and handle the  demands. 
+The costs would vary, but according to amazon, a small website that has a few thousand visitors could cost between $60-$80 per month, which is roughly $850 a year. 
+If the game gains popularity quickly like Flappy Bird did, then AWS would be able to adapt to the load and the revenue source could finance it.
+
+App Servers
+	The game itself does not demand a server but it is something that could be implemented and deployed upon release. It would allow users to keep track of their personal records and compare them with their friends and other users. 
+This would also allow for smoother updates as well. The backend work could also be managed by AWS for our leaderboard. CAPCOM and Epic Games use AWS for their games. Amazon’s strategy is a pay as you go (pay based on usage), so the costs will be based on how many people play the game. 
+At the moment, the game has a very small file size, so it would be inexpensive for users to download. The cost for this would be based on the traffic, but it would start as low as $50-$150 a month for a small game with a small audience. This cost increases when the file size increases and when the audience size increases. 
+Our intentions for the first year is to get the app running on the windows store and maybe a platform like steam. Steam charges $100 to publish a game.
+
+Other Maintenance Topics:
+	Our maintenance plan will also need to consider the initial feedback we receive when releasing our product and when it is in the testing phase. 
+We may need to adapt to feedback given from those who have played the game. We will also need to log errors and track how the game is doing upon release to detect any flaws. 
+An example of a problem that could arise is something going wrong when we are allowing the game to be played on a mobile device, like the snake not moving quite the same or the touch screen does not work as intended.
