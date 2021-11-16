@@ -16,7 +16,7 @@ pygame.init()
 '''
 Main file
 date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA
+by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
