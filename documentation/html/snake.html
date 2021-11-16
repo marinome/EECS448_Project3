@@ -94,6 +94,7 @@ the edge of the board, the game will end.</p>
 <li><p><strong>tail</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – tail of the snake</p></li>
 <li><p><strong>blocks</strong> (<em>sprite group from pygame's library which</em>) – A collection of blocks for each block of the snake</p></li>
 <li><p><strong>direction</strong> (<em>String</em>) – The direction the snake is currently moving - defaulted to still but can be up,down,left, or right</p></li>
+<li><p><strong>nextDirection</strong> – </p></li>
 </ul>
 </dd>
 </dl>
@@ -119,7 +120,6 @@ the edge of the board, the game will end.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coords_2_eat</strong> (<em>[</em><em>x</em><em>,</em><em>y</em><em>] or </em><em>(</em><em>x</em><em>,</em><em>y</em><em>)</em>) – x y of the current, Food</p></li>
 <li><p><strong>sideLength</strong> (<em>int</em>) – length of comparison object</p></li>
-<li><p><strong>mid</strong> (<em>int</em>) – middle of side length</p></li>
 </ul>
 </dd>
 </dl>
@@ -132,17 +132,14 @@ the edge of the board, the game will end.</p>
 <p>Author: Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>screen</strong> (<em>pygame display</em>) – The screen for the game</p></li>
-<li><p><strong>head</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – Head of snake</p></li>
-</ul>
+<dd class="field-odd"><p><strong>screen</strong> (<em>pygame display</em>) – The screen for the game</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screenDimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.update" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screenDimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bonus</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update movement of snake object via keyboard pressing.</p>
 <p>Author: Michael Talaga</p>
 <dl class="field-list simple">
@@ -150,10 +147,7 @@ the edge of the board, the game will end.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>screenDimensions</strong> (<em>Tuple</em>) – screen dimensions (width,height)</p></li>
 <li><p><strong>food</strong> (<a class="reference internal" href="Food.html#Food.Food" title="Food.Food"><em>Food</em></a>) – Food object to check for collision</p></li>
-<li><p><strong>pressed</strong> (<em>pygame function</em>) – The pygame method for receiving a signal from the keyboard</p></li>
-<li><p><strong>change</strong> (<em>Boolean</em>) – Dictating if the snake will change its direction. Blocks will readjust location based on this.</p></li>
-<li><p><strong>y_change</strong> (<em>int</em>) – The amount the snake moves in the vertical direction per turn (can be positive or negative)</p></li>
-<li><p><strong>x_change</strong> (<em>int</em>) – The amount the snake moves in the horizontal direction per turn (can be positive or negative)</p></li>
+<li><p><strong>bonus</strong> – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -173,6 +167,23 @@ the edge of the board, the game will end.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>max_size</strong> (<em>Tuple of</em><em> (</em><em>x</em><em>, </em><em>y</em><em>)</em>) – max x &amp; y size of game board</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="snake.Snake.wall_collision">
+<span class="sig-name descname"><span class="pre">wall_collision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.wall_collision" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>***</strong> what does this do? <strong>*****</strong></p>
+<p>Author: ??????, ????????</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xmin</strong> – </p></li>
+<li><p><strong>xmax</strong> – </p></li>
+<li><p><strong>ymin</strong> – </p></li>
+<li><p><strong>ymax</strong> – </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

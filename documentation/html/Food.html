@@ -76,7 +76,7 @@
 <span id="food-module"></span><h1>Food Module<a class="headerlink" href="#module-Food" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="Food.Food">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">Food.</span></span><span class="sig-name descname"><span class="pre">Food</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">Food.</span></span><span class="sig-name descname"><span class="pre">Food</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pygame.sprite.Sprite</span></code></p>
 <p>Food for the sanke to eat</p>
 <p>Example:</p>
@@ -89,26 +89,65 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>int</em>) – x position</p></li>
 <li><p><strong>y</strong> (<em>int</em>) – y postiion</p></li>
-<li><p><strong>width</strong> (<em>int</em>) – food width</p></li>
-<li><p><strong>height</strong> (<em>int</em>) – food height</p></li>
+<li><p><strong>gold</strong> (<em>Boolean</em>) – True if gold, False else</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="Food.Food.changePosition">
-<span class="sig-name descname"><span class="pre">changePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screenDimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.changePosition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change the position of food upon collision with snake head, ensure it is at snake head
-Author: Michael Talaga</p>
+<span class="sig-name descname"><span class="pre">changePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screenDimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foods</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.changePosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the position of food upon collision with snake head, ensure it is at snake head</p>
+<p>Author: Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>screenDimensions</strong> (<em>tuple as</em><em> (</em><em>x</em><em>, </em><em>y</em><em>) </em><em>for</em><em> (</em><em>width</em><em>, </em><em>height</em><em>)</em>) – dimensions for the screen</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>screenDimensions</strong> (<em>tuple as</em><em> (</em><em>x</em><em>, </em><em>y</em><em>) </em><em>for</em><em> (</em><em>width</em><em>, </em><em>height</em><em>)</em>) – dimensions for the screen</p></li>
+<li><p><strong>foods</strong> (<a class="reference internal" href="#Food.Food" title="Food.Food"><em>Food</em></a>) – Food object to check for collision</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="Food.Food.decLife">
+<span class="sig-name descname"><span class="pre">decLife</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.decLife" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>***</strong> what does this do? <strong>*****</strong></p>
+<p>Author: ??????, ????????</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Food.Food.getPosition">
+<span class="sig-name descname"><span class="pre">getPosition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.getPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>***</strong> what does this do? <strong>*****</strong></p>
+<p>Author: ??????, ????????</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Food.Food.incLife">
+<span class="sig-name descname"><span class="pre">incLife</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.incLife" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>***</strong> what does this do? <strong>*****</strong></p>
+<p>Author: ??????, ????????</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="Food.Food.render">
-<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.render" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snake</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Food.Food.render" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><p>Draw food object onto the screen.</p>
 <p>Author: Michael Talaga</p>
@@ -118,6 +157,8 @@ Author: Michael Talaga</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>screen</strong> (<em>pygame display</em>) – The screen for the game</p></li>
 <li><p><strong>color</strong> (<em>String</em>) – color of the food</p></li>
+<li><p><strong>Block</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – Block object</p></li>
+<li><p><strong>snake</strong> (<a class="reference internal" href="snake.html#snake.Snake" title="snake.Snake"><em>Snake</em></a>) – Snake object</p></li>
 </ul>
 </dd>
 </dl>

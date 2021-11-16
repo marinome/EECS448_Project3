@@ -75,9 +75,21 @@
   <section id="module-snakegame">
 <span id="snake-game-module"></span><h1>Snake Game Module<a class="headerlink" href="#module-snakegame" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
+<dt class="sig sig-object py" id="snakegame.chooseDifficulty">
+<span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">chooseDifficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">snake</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.chooseDifficulty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option after starting to select difficulty, changes things like game speed/speed over time</p>
+<p>Author: Michael Talaga</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>snake</strong> (<a class="reference internal" href="snake.html#snake.Snake" title="snake.Snake"><em>Snake</em></a>) – Snake object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="snakegame.game">
-<span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.game" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMMENTS</p>
+<span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">snake</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difficulty</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main game loop to play snake game</p>
 <p>Author: Michael Talaga</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -117,8 +129,21 @@
 <dd class="field-odd"><p>Tuple (red, green, blue)</p>
 </dd>
 </dl>
-<p>#used to be (red,green,blue) -MEM
-&#64;MEM -&gt; the tuple that is returned, the color, is defined by the amount of red, green and blue, hence the RGB</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snakegame.gridScreen">
+<span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">gridScreen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gridSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.gridScreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>this will add grid lines to the screen</p>
+<p>Author: Mason Otto</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color1</strong> – </p></li>
+<li><p><strong>color2</strong> – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -126,6 +151,21 @@
 <span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.main" title="Permalink to this definition">¶</a></dt>
 <dd><p>Main file to run the game and exit the system when it is finished.</p>
 <p>Author: Michael Talaga, AMA</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snakegame.menu">
+<span class="sig-prename descclassname"><span class="pre">snakegame.</span></span><span class="sig-name descname"><span class="pre">menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#snakegame.menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Menu to start the game or quit</p>
+<p>Author: Michael Talaga</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the game will start or False to quit.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Boolean</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
