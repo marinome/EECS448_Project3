@@ -1,5 +1,6 @@
 import unittest
-import pygame.draw
+import pygame
+
 
 '''
 unit test class
@@ -47,6 +48,17 @@ def get_color(color_string):
         case _:
             return (70,70,70)
 
+def create_key_mock(pressed_key):
+    '''
+    create mock key press for testing
+    '''
+    def helper():
+        tmp = [0] * 300
+        tmp[pressed_key] = 1
+        return tmp
+    return helper
+
+
 class TestSnake(unittest.TestCase):
     '''
     Test suite for Snake class
@@ -85,18 +97,19 @@ class TestSnake(unittest.TestCase):
         # test that the food is in the correct coords
         # self.assertEqual(<the object in the square drawn>, <what should be drawn>)
         # save file for ref
-        pygame.image.save(test_surface, "/test_output/test_food_image.png")
+        pygame.image.save(test_surface, "./test_output/test_food_image.png")
 
     def test_keyboard(self):
         '''
-        test input from the keyboard
+        test input from the keyboard, if no keys pressed, pass
         '''
-        # get up key input
-        # test input
-        # self.assertEqual(<input object>, <up input>)
-
-        # repeat above for left, right, down
-
+        # need video init for test
+        pygame.init()
+        key_state = pygame.key.get_pressed()
+        self.assertEqual(key_state[pygame.K_RIGHT], 0)
+        self.assertEqual(key_state[pygame.K_LEFT], 0)
+        self.assertEqual(key_state[pygame.K_UP], 0)
+        self.assertEqual(key_state[pygame.K_DOWN], 0)
 
     def test_example(self):
         '''
