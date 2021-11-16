@@ -64,10 +64,7 @@ def get_color(color_string):
     :type color_string: String
     :return _: The RGB value of the passed color
     :rtype: Tuple (red, green, blue)
-    #used to be (red,green,blue) -MEM
-    @MEM -> the tuple that is returned, the color, is defined by the amount of red, green and blue, hence the RGB
     '''
-    # @MEM lets not delete code, just add another case, this is a generic func
     match color_string:
         case "red":
             return (255,0,0)
@@ -140,10 +137,13 @@ def gridScreen(gridSize, color1, color2):
     '''
     this will add grid lines to the screen \n
     Author: Mason Otto
-    needs adjusting, this can be fully implemented in project 4 -MXO
 
-    :meta private:
+    :param color1: ????????
+    :type color1: ????????
+    :param color2: ????????
+    :type color2: ????????
     '''
+    # needs adjusting, this can be fully implemented in project 4 -MXO
     count = 0
     for x in range(25, 400, gridSize):
         for y in range(25, 400, gridSize):
@@ -156,8 +156,11 @@ def gridScreen(gridSize, color1, color2):
 
 def chooseDifficulty(snake):
     '''
-    Option after starting to select difficulty, changes things like game speed/speed over time
+    Option after starting to select difficulty, changes things like game speed/speed over time \n
     Author: Michael Talaga
+
+    :param snake: Snake object
+    :type snake: Snake
     '''
 
     difficultyText = "Choose Difficulty"
@@ -204,9 +207,11 @@ def chooseDifficulty(snake):
 
 def menu():
     '''
-    Menu to start the game or quit
+    Menu to start the game or quit \n
     Author: Michael Talaga
-    :return: returns true if the game will start or false to quit.
+
+    :return: True if the game will start or False to quit.
+    :rtype: Boolean
     '''
     title = "Snake Game by Group 3"
     instruction = "Please use arrow keys to select"
@@ -258,7 +263,7 @@ def menu():
 
 def game(snake, difficulty):
     '''
-    Main game loop to play snake game
+    Main game loop to play snake game \n
     Author: Michael Talaga
 
     :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with arrow keys or wasd.

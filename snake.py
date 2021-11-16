@@ -44,8 +44,8 @@ class Snake(pygame.sprite.Sprite):
     :type blocks: sprite group from pygame's library which
     :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
     :type direction: String
-    :param increaseDifficulty: Determines whether or not snake increases speed
-    :type increaseDifficulty: String
+    :param nextDirection: ?????????
+    :type nextDirection: ?????????
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
@@ -67,14 +67,8 @@ class Snake(pygame.sprite.Sprite):
         :type screenDimensions: Tuple
         :param food: Food object to check for collision
         :type food: Food
-        :param pressed: The pygame method for receiving a signal from the keyboard
-        :type pressed: pygame function
-        :param change: Dictating if the snake will change its direction. Blocks will readjust location based on this.
-        :type change: Boolean
-        :param y_change: The amount the snake moves in the vertical direction per turn (can be positive or negative)
-        :type y_change: int
-        :param x_change: The amount the snake moves in the horizontal direction per turn (can be positive or negative)
-        :type x_change: int
+        :param bonus: ?????????????
+        :type bonus: ????????????
         :return: return if there was an unacceptable collision
         :return type: Boolean
         '''
@@ -175,8 +169,6 @@ class Snake(pygame.sprite.Sprite):
 
         :param screen: The screen for the game
         :type screen: pygame display
-        :param head: Head of snake
-        :type head: Block
         '''
 		#for each in blocks
 		#snakeBlocks.draw(screen)
@@ -189,7 +181,20 @@ class Snake(pygame.sprite.Sprite):
         pygame.draw.rect(screen, blue, (head.x, head.y, head.width, head.height))
         pygame.draw.rect(screen, black, (head.x, head.y, head.width, head.height),2)
 
-    def wall_collision(self,xmin,xmax,ymin,ymax):
+    def wall_collision(self, xmin, xmax, ymin, ymax):
+        '''
+        ******* what does this do? ********* \n
+        Author: ??????, ????????
+
+        :param xmin: ????????
+        :type xmin: ????????
+        :param xmax: ????????
+        :type xmax: ????????
+        :param ymin: ????????
+        :type ymin: ????????
+        :param ymax: ????????
+        :type ymax: ????????
+        '''
         if (self.head.x <= xmin or self.head.x >= xmax or self.head.y <= ymin or self.head.y >= ymax):
             return True
         else:
@@ -234,8 +239,6 @@ class Snake(pygame.sprite.Sprite):
         :type coords_2_eat: [x,y] or (x,y)
         :param sideLength: length of comparison object
         :type sideLength: int
-        :param mid: middle of side length
-        :type mid: int
         '''
         #get current head of snake
         copy_body = self.blocks.sprites()
