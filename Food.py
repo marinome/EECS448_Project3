@@ -40,10 +40,10 @@ class Food(pygame.sprite.Sprite):
         self.height = 25
         if gold:
             self.gold = True
-            self.apple_img = pygame.image.load('goldApple.png').convert_alpha()
+            self.apple_img = pygame.image.load('./images/goldApple.png').convert_alpha()
         else:
             self.gold = False
-            self.apple_img = pygame.image.load('redApple.png').convert_alpha()
+            self.apple_img = pygame.image.load('./images/redApple.png').convert_alpha()
 
     def incLife(self):
         '''
