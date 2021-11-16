@@ -1,6 +1,7 @@
 .DS_Store
 documentation/sphinx_support/build/
 documentation/~$project3_hours.xlsx
+test_output
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
