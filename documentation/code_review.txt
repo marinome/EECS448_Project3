@@ -6,4 +6,4 @@ by: Morgan Marino
 description: "Document the following: List of faults detected, Description of each fault, Who was assigned to fix each fault, How the fault was fixed" -Project 4.pdf
 '''
 Code Review:
-        #500-700 words
+        Our group decided to write the code review from each of our own perspectives. We think this best shows our strengths as individuals and the number of methods Software Engineers use to identify and strategize to fix code errors.
