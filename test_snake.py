@@ -94,6 +94,7 @@ class TestSnake(unittest.TestCase):
         test_surface = pygame.Surface(curr_game_size)
         test_surface.fill(get_color(border_color))
         pygame.draw.polygon(test_surface, get_color(play_area_color), rect_verticies)
+        # TODO: finish test 
         # test that the food is in the correct coords
         # self.assertEqual(<the object in the square drawn>, <what should be drawn>)
         # save file for ref
