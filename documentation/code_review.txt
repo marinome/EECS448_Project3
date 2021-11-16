@@ -7,3 +7,6 @@ description: "Document the following: List of faults detected, Description of ea
 '''
 Code Review:
         Our group decided to write the code review from each of our own perspectives. We think this best shows our strengths as individuals and the number of methods Software Engineers use to identify and strategize to fix code errors.
+        
+Michael Talaga:
+        After viewing the code in the snakegame.py file and witnessing how it performed, I thought there was an opportunity to add sound to the game. It doesn’t have to include music but if it has sound effects it would add another dimension to the game as sound is very important for the gaming experience. Michael was assigned to resolve this and he consulted several websites to find good sounds to match the different things that happen in the snake game like eating and colliding/game ending. The sounds were properly cited and stored in their own files, and the game utilized pygame built-in mixer library to play the sounds.
