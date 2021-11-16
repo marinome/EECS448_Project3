@@ -16,7 +16,7 @@ pygame.init()
 '''
 Main file
 date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
+by: Morgan Marino, Michael Talaga, AMA
 '''
 
 # MADE COLOR FUNC TO STORE ALL COLORS -AMA
@@ -268,6 +268,7 @@ def game(snake, difficulty):
 
     #random food placement
     bonus = 0
+    score = 0
     xys = []
     foods = []
     for i in range(2):
@@ -300,12 +301,13 @@ def game(snake, difficulty):
             food.render(screen, get_color("red"), Block, snake)
         borderCollide = snake.wall_collision(20,380,20,380)
         #snake.update((display_width, display_height), food)
-        bodyCollide, bonus = snake.update((display_width, display_height), foods, bonus)
+        bodyCollide, bonus, add = snake.update((display_width, display_height), foods, bonus)
+        score += add
         if (borderCollide == True or bodyCollide == True): #Border collision check
             # exit = True
-            return snake.size - 2
+            return score
         # display score #MT Made snake size for now
-        show_score(snake.size - 2, get_color("yellow"), 'times new roman', 20)
+        show_score(score, get_color("yellow"), 'times new roman', 20)
         pygame.display.update()
         clock.tick(pace)
 

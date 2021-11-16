@@ -19,7 +19,7 @@ blue = (0,0,255)
 '''
 snake.py
 date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
+by: Morgan Marino, Michael Talaga, AMA
 '''
 
 
@@ -82,6 +82,7 @@ class Snake(pygame.sprite.Sprite):
         change = True
         y_change = 0
         x_change = 0
+        score = 0
 
         #arrow key movement
         if pressed[pygame.K_UP] and self.direction != "DOWN":
@@ -140,22 +141,32 @@ class Snake(pygame.sprite.Sprite):
             #if self.head.y < 50: #tail add test
                 #self.add_tail(1)
             if (self.wall_check(screenDimensions)): #check for collision
-                return True, bonus
+                return True, bonus, score
 		#check for snake body collision
         for block in self.blocks:
             if(block.id not in range (2, 8)):
                 if (self.did_eat_block((block.x, block.y), float((block.width / 2))) == True):
-                    return True, bonus
+                    return True, bonus, score
         #collision check with food
         for i in range(1+bonus):
             if (self.did_eat_block((foods[i].x, foods[i].y), foods[i].width / 2) == True):
                 foods[i].changePosition(screenDimensions, foods)
                 self.add_tail(1)
+                if i == 0:
+                    score = 1
+                else:
+                    score = 2
                 if i == 0 and bonus == 0:
                     bonus = random.randint(0, 3) > 1
+                    if bonus == 1:
+                        foods[1].incLife()
                 elif bonus and i == bonus:
                     bonus = 0
-        return False, bonus
+            if i > 0:
+                if foods[i].decLife() == 0:
+                    bonus = 0
+
+        return False, bonus, score
 
     def render(self, screen):
         '''

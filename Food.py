@@ -10,7 +10,7 @@ pygame.init()
 '''
 Food.py
 date: oct 29 2021
-by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
+by: Morgan Marino, Michael Talaga, AMA
 '''
 
 
@@ -41,9 +41,19 @@ class Food(pygame.sprite.Sprite):
         self.width = 25
         self.height = 25
         if gold:
+            self.gold = True
             self.apple_img = pygame.image.load('goldApple.png').convert_alpha()
         else:
+            self.gold = False
             self.apple_img = pygame.image.load('redApple.png').convert_alpha()
+
+    def incLife(self):
+        self.life = 170 #this is lifetime of apple (this count * 30 msec)
+
+    def decLife(self):
+        if not self.life == 0:
+            self.life = self.life - 1
+        return self.life
 
     def getPosition(self):
         return self.x, self.y
