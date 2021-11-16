@@ -148,7 +148,7 @@ class Snake(pygame.sprite.Sprite):
             if (self.did_eat_block((foods[i].x, foods[i].y), foods[i].width / 2) == True):
                 foods[i].changePosition(screenDimensions, foods)
                 chomp = pygame.mixer.Sound("applesound.wav")
-                #chomp.play(maxtime=1300)
+                chomp.play(maxtime=1300)
                 self.add_tail(1)
                 if i == 0:
                     score = 1
