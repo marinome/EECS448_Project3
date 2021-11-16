@@ -8,7 +8,7 @@ pygame.init()
 
 '''
 Block.py
-by: Morgan Marino, Michael Talaga, AMA
+by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
 
