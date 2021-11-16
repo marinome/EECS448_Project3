@@ -69,6 +69,8 @@ class Snake(pygame.sprite.Sprite):
         :type food: Food
         :param bonus: ?????????????
         :type bonus: ????????????
+        :param chomp: Chomping sound when a snake eats an apple
+        :type chomp: pygame mixer sound
         :return: return if there was an unacceptable collision
         :return type: Boolean
         '''
@@ -145,6 +147,8 @@ class Snake(pygame.sprite.Sprite):
         for i in range(1+bonus):
             if (self.did_eat_block((foods[i].x, foods[i].y), foods[i].width / 2) == True):
                 foods[i].changePosition(screenDimensions, foods)
+                chomp = pygame.mixer.Sound("applesound.wav")
+                #chomp.play(maxtime=1300)
                 self.add_tail(1)
                 if i == 0:
                     score = 1
