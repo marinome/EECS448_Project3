@@ -19,7 +19,7 @@ blue = (0,0,255)
 '''
 snake.py
 date: oct 26 2021
-by: Morgan Marino, Michael Talaga, AMA
+by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
 
