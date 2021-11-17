@@ -31,7 +31,7 @@ class Food(pygame.sprite.Sprite):
     :param width: width of sprite
     :type width: int
     :param height: int
-    :type height: height of sprite 
+    :type height: height of sprite
     :param gold: True if gold, False else
     :type gold: Boolean
     '''
