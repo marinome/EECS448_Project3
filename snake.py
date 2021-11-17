@@ -66,6 +66,8 @@ class Snake(pygame.sprite.Sprite):
         :type screenDimensions: Tuple
         :param food: Food object to check for collision
         :type food: Food
+        :param placedOnSnake: Flag to check if randomly placed food is being placed on snake body
+        :type placedOnSnake: Boolean
         :param bonus: ?????????????
         :type bonus: ????????????
         :param chomp: Chomping sound when a snake eats an apple
@@ -145,7 +147,14 @@ class Snake(pygame.sprite.Sprite):
         #collision check with food
         for i in range(1+bonus):
             if (self.did_eat_block((foods[i].x, foods[i].y), foods[i].width / 2) == True):
-                foods[i].changePosition(screenDimensions, foods)
+                placedOnSnake = True
+                while placedOnSnake:
+                    placedOnSnake = False
+                    foods[i].changePosition(screenDimensions, foods)
+                    for block in self.blocks:
+                        if (foods[i].x in range (((block.x) - block.width), (block.x + block.width)) and
+                        (foods[i].y in range ((block.y - block.width), (block.y + block.width)))):
+                            placedOnSnake = True
                 chomp = pygame.mixer.Sound("sounds/applesound.wav")
                 chomp.set_volume(0.5)
                 chomp.play(maxtime=800, fade_ms=250)
