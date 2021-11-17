@@ -268,6 +268,8 @@ def game(snake, difficulty):
 
     :param snake: This is the snake object which will be moving around on the screen. The user will be able to move this with arrow keys or wasd.
     :type snake: Snake, made of, Block
+    :param crash: Crash sound upon impact
+    :type crash: Pygame mixer using mp3 file
     '''
     exit = False
 
@@ -309,7 +311,8 @@ def game(snake, difficulty):
         bodyCollide, bonus, add = snake.update((display_width, display_height), foods, bonus)
         score += add
         if (borderCollide == True or bodyCollide == True): #Border collision check
-            # exit = True
+            crash = pygame.mixer.Sound("sounds/zapsplat.mp3")
+            crash.play()
             return score
         # display score #MT Made snake size for now
         show_score(score, get_color("yellow"), 'times new roman', 20)
