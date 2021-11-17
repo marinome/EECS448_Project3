@@ -9,6 +9,7 @@ date: nov 8 2021
 
 curr_game_size = (425, 425)
 rect_verticies = [(25,25),(400,25),(400,400),(25,400)]
+apple_verticies = [(35,35),(60,35),(60,60),(35,60)]
 border_color = "yellow"
 play_area_color = "green"
 brdr_pt_left = (10, 213)
@@ -16,6 +17,8 @@ brdr_pt_right = (410, 213)
 brdr_pt_top = (213, 10)
 brdr_pt_bot = (213, 410)
 gameplay_pt = (213, 212)
+apple_pt = (200, 200)
+apple_test_pt = (40, 50)
 '''
 :meta private:
 '''
@@ -48,16 +51,6 @@ def get_color(color_string):
         # default, some odd color
         case _:
             return (70,70,70)
-
-def create_key_mock(pressed_key):
-    '''
-    create mock key press for testing
-    '''
-    def helper():
-        tmp = [0] * 300
-        tmp[pressed_key] = 1
-        return tmp
-    return helper
 
 
 class TestSnake(unittest.TestCase):
@@ -110,9 +103,9 @@ class TestSnake(unittest.TestCase):
         test_surface = pygame.Surface(curr_game_size)
         test_surface.fill(get_color(border_color))
         pygame.draw.polygon(test_surface, get_color(play_area_color), rect_verticies)
-        # TODO: finish test
+        pygame.draw.polygon(test_surface, get_color("red"), apple_verticies)
         # test that the food is in the correct coords
-        # self.assertEqual(<the object in the square drawn>, <what should be drawn>)
+        self.assertEqual(test_surface.get_at(apple_test_pt), get_color("red"))
         # save file for ref
         pygame.image.save(test_surface, "./test_output/test_food_image.png")
 
