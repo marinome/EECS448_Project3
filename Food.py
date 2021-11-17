@@ -28,6 +28,10 @@ class Food(pygame.sprite.Sprite):
     :type x: int
     :param y: y postiion
     :type y: int
+    :param width: width of sprite
+    :type width: int
+    :param height: int
+    :type height: height of sprite 
     :param gold: True if gold, False else
     :type gold: Boolean
     '''
@@ -38,11 +42,10 @@ class Food(pygame.sprite.Sprite):
         self.y = y
         self.width = 25
         self.height = 25
+        self.gold = gold
         if gold:
-            self.gold = True
             self.apple_img = pygame.image.load('./images/goldApple.png').convert_alpha()
         else:
-            self.gold = False
             self.apple_img = pygame.image.load('./images/redApple.png').convert_alpha()
 
     def incLife(self):
