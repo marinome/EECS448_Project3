@@ -15,6 +15,7 @@ brdr_pt_left = (10, 213)
 brdr_pt_right = (410, 213)
 brdr_pt_top = (213, 10)
 brdr_pt_bot = (213, 410)
+gameplay_pt = (213, 212)
 '''
 :meta private:
 '''
@@ -86,6 +87,21 @@ class TestSnake(unittest.TestCase):
         # save file for ref
         pygame.image.save(test_surface, "./test_output/test_border_image.png")
 
+    def test_game_area(self):
+        '''
+        tests the border is drawn and is the correct color
+        '''
+        # draw a surface
+        test_surface = pygame.Surface(curr_game_size)
+        # fill surface with border color
+        test_surface.fill(get_color(border_color))
+        # draw play area on surface
+        pygame.draw.polygon(test_surface, get_color(play_area_color), rect_verticies)
+        # test left, right, top, bottom is equal to some color
+        self.assertEqual(test_surface.get_at(gameplay_pt), get_color(play_area_color))
+        # save file for ref
+        pygame.image.save(test_surface, "./test_output/test_game_area_image.png")
+
     def test_food(self):
         '''
         tests food is renderded at some coord
@@ -94,7 +110,7 @@ class TestSnake(unittest.TestCase):
         test_surface = pygame.Surface(curr_game_size)
         test_surface.fill(get_color(border_color))
         pygame.draw.polygon(test_surface, get_color(play_area_color), rect_verticies)
-        # TODO: finish test 
+        # TODO: finish test
         # test that the food is in the correct coords
         # self.assertEqual(<the object in the square drawn>, <what should be drawn>)
         # save file for ref
