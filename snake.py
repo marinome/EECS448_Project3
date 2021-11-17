@@ -57,7 +57,6 @@ class Snake(pygame.sprite.Sprite):
         self.direction = "NULL" #setting direction snke will move in
         self.nextDirection = "NULL"
 
-
     def update(self, screenDimensions, foods, bonus):
         '''
         Update movement of snake object via keyboard pressing. \n
@@ -213,7 +212,8 @@ class Snake(pygame.sprite.Sprite):
         :param max_size: max x & y size of game board
         :type max_size: Tuple of (x, y)
         '''
-        if ((self.head.x + self.head.width) > (max_size[0])) or ((self.head.y + self.head.height) > (max_size[1])):
+        if ((self.head.x + self.head.width) > (max_size[0])) or
+            ((self.head.y + self.head.height) > (max_size[1])):
             return True
         if (self.head.x < 0 or self.head.y < 0):
             return True
@@ -251,5 +251,6 @@ class Snake(pygame.sprite.Sprite):
         print(copy_body[0].x, copy_body[0].y)
         #check for overlap of head and tail
         mid = int(sideLength)
-        if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + mid)) and (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid)))):
+        if (self.head.x in range (((coords_2_eat[0]) - mid), (coords_2_eat[0] + mid)) and
+            (self.head.y in range ((coords_2_eat[1] - mid), (coords_2_eat[1] + mid)))):
             return True

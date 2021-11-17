@@ -19,8 +19,6 @@ date: oct 26 2021
 by: Morgan Marino, Michael Talaga, AMA, Divya Shakamuri
 '''
 
-# MADE COLOR FUNC TO STORE ALL COLORS -AMA
-#TODO: define colors, fonts
 #define display settings
 display_width = 425
 display_height = 425
@@ -30,30 +28,6 @@ clock = pygame.time.Clock()
 pace = 30 #Speed of the game
 # initial score
 score = 0
-#define snake attributes
-#snakeBlocks = pygame.sprite.Group()
-
-
-# class SnakeGame:
-#     '''
-#     Top level game class.  Will call functions as needed to keep the game running
-#
-#     Example::
-#
-#         snakegame =  SnakeGame()
-#
-#     :param some_param:
-#     :type some_param: int
-#     '''
-#     def __init__(self):
-#         self.some_param = 0
-#
-#     def print_board():
-#          return 0
-#     def snake_moves():
-#          return 0
-#     def add_tail():
-#          return 0
 
 def get_color(color_string):
     # central place to store all color values
@@ -162,7 +136,6 @@ def chooseDifficulty(snake):
     :param snake: Snake object
     :type snake: Snake
     '''
-
     difficultyText = "Choose Difficulty"
     font = pygame.font.SysFont('times new roman', 25)
     smallFont = pygame.font.SysFont('times new roman', 20)
@@ -323,11 +296,7 @@ def main():
     '''
     Main file to run the game and exit the system when it is finished. \n
     Author: Michael Talaga, AMA
-
-
     '''
-
-
     finished = False
     while not finished:
         snake = Snake(200, 200) #Initializes snake with a starting position (divisible by 5)
