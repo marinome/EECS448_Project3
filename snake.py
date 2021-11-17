@@ -139,7 +139,7 @@ class Snake(pygame.sprite.Sprite):
                 return True, bonus, score
 		#check for snake body collision
         for block in self.blocks:
-            if(block.id not in range (2, 8)):
+            if(block.id != 2):
                 if (self.did_eat_block((block.x, block.y), float((block.width / 2))) == True):
                     return True, bonus, score
         #collision check with food
