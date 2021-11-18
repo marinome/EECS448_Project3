@@ -68,8 +68,8 @@ class Snake(pygame.sprite.Sprite):
         :type food: Food
         :param placedOnSnake: Flag to check if randomly placed food is being placed on snake body
         :type placedOnSnake: Boolean
-        :param bonus: ?????????????
-        :type bonus: ????????????
+        :param bonus: bonus to award for eating gold apple
+        :type bonus: int
         :param chomp: Chomping sound when a snake eats an apple
         :type chomp: pygame mixer sound
         :return: return if there was an unacceptable collision
@@ -196,7 +196,7 @@ class Snake(pygame.sprite.Sprite):
 
     def wall_collision(self, xmin, xmax, ymin, ymax):
         '''
-        ******* what does this do? ********* \n
+        Detects if snake has collided with the wall  \n
         Author: ??????
 
         :param xmin: Left wall x coord
@@ -205,9 +205,9 @@ class Snake(pygame.sprite.Sprite):
         :type xmax: int
         :param ymin: Top wall y coord
         :type ymin: int
-        :param ymax: Bottom wall y coord 
+        :param ymax: Bottom wall y coord
         :type ymax: int
-        :return: True if has hit wall
+        :return: True if has hit wall, False else
         :rtype: Boolean
         '''
         if (self.head.x <= xmin or self.head.x >= xmax or self.head.y <= ymin or self.head.y >= ymax):
