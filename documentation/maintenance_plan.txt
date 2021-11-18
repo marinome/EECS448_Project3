@@ -7,9 +7,6 @@ description: "How much will it cost to maintain your product for the next year?"
 '''
 Maintenance Plan:
 	        
-
-#ideas: costs for hiring developers, monthly or annual fees for platforms, servers, domains
-	#500-700 words
 Hiring Developers:
 According to ZipRecruiter, a game developer makes roughly $70,000 annually in the state of Kansas. On top of this, there would be expectations for the company to contribute to their benefits plan, which could be up to 50% of their cost of benefits. 
 The Bureau of Labor Statistics reports that an employer may pay up to an additional $10-$12 an hour for an employee’s benefits. This could add an additional $20,000 per year, 
