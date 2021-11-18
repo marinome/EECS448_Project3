@@ -44,8 +44,8 @@ class Snake(pygame.sprite.Sprite):
     :type blocks: sprite group from pygame's library which
     :param direction: The direction the snake is currently moving - defaulted to still but can be up,down,left, or right
     :type direction: String
-    :param nextDirection: ?????????
-    :type nextDirection: ?????????
+    :param nextDirection: direction to change to
+    :type nextDirection: String
     '''
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
@@ -197,16 +197,18 @@ class Snake(pygame.sprite.Sprite):
     def wall_collision(self, xmin, xmax, ymin, ymax):
         '''
         ******* what does this do? ********* \n
-        Author: ??????, ????????
+        Author: ??????
 
-        :param xmin: ????????
-        :type xmin: ????????
-        :param xmax: ????????
-        :type xmax: ????????
-        :param ymin: ????????
-        :type ymin: ????????
-        :param ymax: ????????
-        :type ymax: ????????
+        :param xmin: Left wall x coord
+        :type xmin: int
+        :param xmax: Right wall x coord
+        :type xmax: int
+        :param ymin: Top wall y coord
+        :type ymin: int
+        :param ymax: Bottom wall y coord 
+        :type ymax: int
+        :return: True if has hit wall
+        :rtype: Boolean
         '''
         if (self.head.x <= xmin or self.head.x >= xmax or self.head.y <= ymin or self.head.y >= ymax):
             return True
