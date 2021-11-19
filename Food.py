@@ -50,18 +50,18 @@ class Food(pygame.sprite.Sprite):
 
     def incLife(self):
         '''
-        ******* what does this do? ********* \n
-        Author: ??????, ????????
+        lifetime of apple \n
+        Author: ??????
         '''
         self.life = 170 #this is lifetime of apple (this count * 30 msec)
 
     def decLife(self):
         '''
-        ******* what does this do? ********* \n
-        Author: ??????, ????????
+        decrements apple life by 1 downto 0 \n
+        Author: ??????
 
-        :return: ??????
-        :rtype: ??????
+        :return: apple life number
+        :rtype: int
         '''
         if not self.life == 0:
             self.life = self.life - 1
@@ -69,11 +69,13 @@ class Food(pygame.sprite.Sprite):
 
     def getPosition(self):
         '''
-        ******* what does this do? ********* \n
-        Author: ??????, ????????
+        finds and returns position of object \n
+        Author: ??????
 
-        :return: ??????
-        :rtype: ??????
+        :return x: x position of Food object
+        :rtype: int
+        :return y: y position of Food object
+        :rtype: int
         '''
         return self.x, self.y
 
