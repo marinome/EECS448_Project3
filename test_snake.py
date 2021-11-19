@@ -121,33 +121,6 @@ class TestSnake(unittest.TestCase):
         self.assertEqual(key_state[pygame.K_UP], 0)
         self.assertEqual(key_state[pygame.K_DOWN], 0)
 
-    def test_example(self):
-        '''
-        example test, link to citation in README.html
-        :meta private:
-        '''
-        surf = pygame.Surface((320, 200))
-        surf.fill(get_color("black"))
-
-        # The area the ellipse is contained in, is held by rect.
-        #
-        # 10 pixels from the left,
-        # 11 pixels from the top.
-        # 225 pixels wide.
-        # 95 pixels high.
-        rect = (10, 11, 225, 95)
-        pygame.draw.ellipse(surf, get_color("red"), rect)
-
-        # To see what is drawn you can save the image.
-        # pygame.image.save(surf, "test_draw2_image.png")
-
-        # The ellipse should not draw over the black in the top left spot.
-        self.assertEqual(surf.get_at((0, 0)), get_color("black"))
-
-        # It should be red in the middle of the ellipse.
-        middle_of_ellipse = (125, 55)
-        self.assertEqual(surf.get_at(middle_of_ellipse), get_color("red"))
-
 
 
 
