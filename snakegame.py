@@ -112,10 +112,10 @@ def gridScreen(gridSize, color1, color2):
     this will add grid lines to the screen \n
     Author: Mason Otto
 
-    :param color1: ????????
-    :type color1: ????????
-    :param color2: ????????
-    :type color2: ????????
+    :param color1: grid color 1
+    :type color1: RGB color, (R,G,B), 0-255 each
+    :param color2: grid color 2
+    :type color2: RGB color, (R,G,B), 0-255 each
     '''
     # needs adjusting, this can be fully implemented in project 4 -MXO
     count = 0
