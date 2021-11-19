@@ -94,7 +94,7 @@ the edge of the board, the game will end.</p>
 <li><p><strong>tail</strong> (<a class="reference internal" href="Block.html#Block.Block" title="Block.Block"><em>Block</em></a>) – tail of the snake</p></li>
 <li><p><strong>blocks</strong> (<em>sprite group from pygame's library which</em>) – A collection of blocks for each block of the snake</p></li>
 <li><p><strong>direction</strong> (<em>String</em>) – The direction the snake is currently moving - defaulted to still but can be up,down,left, or right</p></li>
-<li><p><strong>nextDirection</strong> – </p></li>
+<li><p><strong>nextDirection</strong> (<em>String</em>) – direction to change to</p></li>
 </ul>
 </dd>
 </dl>
@@ -147,7 +147,8 @@ the edge of the board, the game will end.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>screenDimensions</strong> (<em>Tuple</em>) – screen dimensions (width,height)</p></li>
 <li><p><strong>food</strong> (<a class="reference internal" href="Food.html#Food.Food" title="Food.Food"><em>Food</em></a>) – Food object to check for collision</p></li>
-<li><p><strong>bonus</strong> – </p></li>
+<li><p><strong>placedOnSnake</strong> (<em>Boolean</em>) – Flag to check if randomly placed food is being placed on snake body</p></li>
+<li><p><strong>bonus</strong> (<em>int</em>) – bonus to award for eating gold apple</p></li>
 <li><p><strong>chomp</strong> (<em>pygame mixer sound</em>) – Chomping sound when a snake eats an apple</p></li>
 </ul>
 </dd>
@@ -175,16 +176,22 @@ the edge of the board, the game will end.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="snake.Snake.wall_collision">
 <span class="sig-name descname"><span class="pre">wall_collision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#snake.Snake.wall_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>***</strong> what does this do? <strong>*****</strong></p>
-<p>Author: ??????, ????????</p>
+<dd><p>Detects if snake has collided with the wall</p>
+<p>Author: ??????</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>xmin</strong> – </p></li>
-<li><p><strong>xmax</strong> – </p></li>
-<li><p><strong>ymin</strong> – </p></li>
-<li><p><strong>ymax</strong> – </p></li>
+<li><p><strong>xmin</strong> (<em>int</em>) – Left wall x coord</p></li>
+<li><p><strong>xmax</strong> (<em>int</em>) – Right wall x coord</p></li>
+<li><p><strong>ymin</strong> (<em>int</em>) – Top wall y coord</p></li>
+<li><p><strong>ymax</strong> (<em>int</em>) – Bottom wall y coord</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if has hit wall, False else</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Boolean</p>
 </dd>
 </dl>
 </dd></dl>

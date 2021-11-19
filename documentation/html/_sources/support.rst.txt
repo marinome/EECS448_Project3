@@ -1,7 +1,7 @@
 Support
 =======
 
-To Run Tests:
+Automated Unit Test:
 -------------
 
 At the command line, on branch ``Project4``::
